@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate_Example", "Section_1\Delegate_Example.csproj", "{BF24FFE8-16C7-4A18-B93F-1B3EA687C958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPaymentApplication", "DentalPaymentApplication\DentalPaymentApplication.csproj", "{2713F8DE-A935-41F8-9D2F-AD28A6D458EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityPanel", "SecurityPanel\SecurityPanel.csproj", "{CD06ABD1-799F-4CA9-83CE-575B077CF9B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort_Collection_Example", "ConsoleApplication1\Sort_Collection_Example.csproj", "{469A0A56-1B24-4655-AD58-AD5A5FABBA35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event_Clock_Example", "Event_Clock_Example\Event_Clock_Example.csproj", "{A7E64EBA-335F-4038-B0AD-1D515348E915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Order Application", "E-Order Application\E-Order Application.csproj", "{848333CC-6052-4793-8D5E-01402172B9BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF24FFE8-16C7-4A18-B93F-1B3EA687C958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF24FFE8-16C7-4A18-B93F-1B3EA687C958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF24FFE8-16C7-4A18-B93F-1B3EA687C958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF24FFE8-16C7-4A18-B93F-1B3EA687C958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2713F8DE-A935-41F8-9D2F-AD28A6D458EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2713F8DE-A935-41F8-9D2F-AD28A6D458EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2713F8DE-A935-41F8-9D2F-AD28A6D458EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2713F8DE-A935-41F8-9D2F-AD28A6D458EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD06ABD1-799F-4CA9-83CE-575B077CF9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD06ABD1-799F-4CA9-83CE-575B077CF9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD06ABD1-799F-4CA9-83CE-575B077CF9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD06ABD1-799F-4CA9-83CE-575B077CF9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469A0A56-1B24-4655-AD58-AD5A5FABBA35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469A0A56-1B24-4655-AD58-AD5A5FABBA35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469A0A56-1B24-4655-AD58-AD5A5FABBA35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469A0A56-1B24-4655-AD58-AD5A5FABBA35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E64EBA-335F-4038-B0AD-1D515348E915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E64EBA-335F-4038-B0AD-1D515348E915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E64EBA-335F-4038-B0AD-1D515348E915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E64EBA-335F-4038-B0AD-1D515348E915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848333CC-6052-4793-8D5E-01402172B9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848333CC-6052-4793-8D5E-01402172B9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848333CC-6052-4793-8D5E-01402172B9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848333CC-6052-4793-8D5E-01402172B9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
