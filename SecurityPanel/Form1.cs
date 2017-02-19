@@ -39,8 +39,13 @@ namespace SecurityPanel
                 int codeNumber;
                 if (Int32.TryParse(code, out codeNumber))
                 {
+                    string message = GetLogMessage(getAccessGrantType(codeNumber));
+
                     listBox.Items.Add(GetLogMessage("Restricted Access !"));
-                    listBox.Items.Add(GetLogMessage(getAccessGrantType(codeNumber)));
+                    listBox.Items.Add(message);
+
+                    // Loging message.
+                    FileUtils.WriteMessageToFile(@"AccessLogs.log", message);
                 }
                 else
                     Console.WriteLine("String could not be parsed.");

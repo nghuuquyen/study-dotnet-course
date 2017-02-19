@@ -11,7 +11,7 @@ namespace StudentManaging.Models
         public SinhVienCaoDang() {}
 
         public SinhVienCaoDang(string diaChi, string dienThoai, string hoTen,
-                               int maSo, DateTime ngaySinh, string nienKhoa)
+                               string maSo, DateTime ngaySinh, string nienKhoa)
         : base(diaChi, dienThoai, hoTen, maSo, ngaySinh, nienKhoa)
         {
 

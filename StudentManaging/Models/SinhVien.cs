@@ -11,14 +11,14 @@ namespace StudentManaging.Models
         private string diaChi;
         private string dienThoai;
         private string hoTen;
-        private int maSo;
+        private string maSo;
         private DateTime ngaySinh;
         private string nienKhoa;
         public SinhVien()
         {
         }
 
-        public SinhVien(string diaChi, string dienThoai, string hoTen, int maSo, DateTime ngaySinh, string nienKhoa)
+        public SinhVien(string diaChi, string dienThoai, string hoTen, string maSo, DateTime ngaySinh, string nienKhoa)
         {
             this.diaChi = diaChi;
             this.dienThoai = dienThoai;
@@ -45,7 +45,7 @@ namespace StudentManaging.Models
             set { this.hoTen = value; }
         }
 
-        public int MSSV
+        public string MSSV
         {
             get { return this.maSo; }
             set { this.maSo = value; }

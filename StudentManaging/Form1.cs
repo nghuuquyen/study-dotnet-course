@@ -265,7 +265,7 @@ namespace StudentManaging
 
             data.DienThoai = txtDienThoai.Text;
             data.HoTen = txtHoTen.Text;
-            data.MaSo = int.Parse(txtMSSV.Text);
+            data.MaSo = txtMSSV.Text;
             data.NgaySinh = dtpNS.Value;
             data.NienKhoa = txtNienKhoa.Text;
             data.ChuyenNganh = cboCN.Text;
@@ -349,7 +349,7 @@ namespace StudentManaging
             public string DiaChi { get; set; }
             public string DienThoai { get; set; }
             public string HoTen { get; set; }
-            public int MaSo { get; set; }
+            public string MaSo { get; set; }
             public DateTime NgaySinh { get; set; }
             public string NienKhoa { get; set; }
             public string ChuyenNganh { get; set; }

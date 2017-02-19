@@ -14,7 +14,7 @@ namespace StudentManaging.Models
 
         }
 
-        public SinhVienDaiHoc(string diaChi, string dienThoai, string hoTen, int maSo, 
+        public SinhVienDaiHoc(string diaChi, string dienThoai, string hoTen, string maSo, 
                               DateTime ngaySinh, string nienKhoa, string chuyenNganh)
         :base(diaChi, dienThoai, hoTen, maSo, ngaySinh, nienKhoa)
         {

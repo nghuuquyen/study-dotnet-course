@@ -14,7 +14,7 @@ namespace StudentManaging.Models
         public SinhVienBangHai() { }
 
         public SinhVienBangHai(string bang1, string donVi, string diaChi, string dienThoai, 
-                               string hoTen, int maSo, DateTime ngaySinh, string nienKhoa)
+                               string hoTen, string maSo, DateTime ngaySinh, string nienKhoa)
         :base(diaChi, dienThoai, hoTen, maSo, ngaySinh, nienKhoa)
         {
             this.bang1 = bang1;
