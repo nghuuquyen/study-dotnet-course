@@ -17,7 +17,9 @@ namespace E_Order_Application
         public Form1()
         {
             InitializeComponent();
-            InitialFoodTable();            InitialTableCombox();        }
+            InitialFoodTable();
+            InitialTableCombox();
+        }
 
         private void InitialTableCombox()
         {
@@ -28,7 +30,8 @@ namespace E_Order_Application
         private void InitialFoodTable()
         {
             table.Columns.Add("FoodName");
-            table.Columns.Add(new DataColumn("Quantity", typeof(int)));            foodDataGrid.DataSource = table;
+            table.Columns.Add(new DataColumn("Quantity", typeof(int)));
+            foodDataGrid.DataSource = table;
         }
 
         private void OnSelectedFood(object sender, EventArgs e)
@@ -97,6 +100,7 @@ namespace E_Order_Application
         {
             if (isValidOrderForm())
                 MessageBox.Show(getTableOrderMessage(table), "Order Information Detail");
+
         }
 
 

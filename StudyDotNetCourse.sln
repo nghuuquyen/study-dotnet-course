@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event_Clock_Example", "Even
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Order Application", "E-Order Application\E-Order Application.csproj", "{848333CC-6052-4793-8D5E-01402172B9BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManaging", "StudentManaging\StudentManaging.csproj", "{264636D4-B296-481F-8235-8DF6D0386383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{848333CC-6052-4793-8D5E-01402172B9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{848333CC-6052-4793-8D5E-01402172B9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{848333CC-6052-4793-8D5E-01402172B9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264636D4-B296-481F-8235-8DF6D0386383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264636D4-B296-481F-8235-8DF6D0386383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264636D4-B296-481F-8235-8DF6D0386383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264636D4-B296-481F-8235-8DF6D0386383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
