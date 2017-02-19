@@ -97,7 +97,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(75, 65);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(167, 20);
-            this.txtHoTen.TabIndex = 2;
+            this.txtHoTen.TabIndex = 1;
             // 
             // label3
             // 
@@ -113,7 +113,7 @@
             this.txtMSSV.Location = new System.Drawing.Point(75, 91);
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(119, 20);
-            this.txtMSSV.TabIndex = 2;
+            this.txtMSSV.TabIndex = 3;
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.txtDienThoai.Location = new System.Drawing.Point(325, 91);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(158, 20);
-            this.txtDienThoai.TabIndex = 2;
+            this.txtDienThoai.TabIndex = 4;
             // 
             // label6
             // 
@@ -161,7 +161,7 @@
             this.txtNienKhoa.Location = new System.Drawing.Point(325, 121);
             this.txtNienKhoa.Name = "txtNienKhoa";
             this.txtNienKhoa.Size = new System.Drawing.Size(100, 20);
-            this.txtNienKhoa.TabIndex = 2;
+            this.txtNienKhoa.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -177,7 +177,7 @@
             this.groupBox1.Location = new System.Drawing.Point(15, 170);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(558, 116);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loại hình";
             // 
@@ -186,7 +186,7 @@
             this.txtCty.Location = new System.Drawing.Point(224, 82);
             this.txtCty.Name = "txtCty";
             this.txtCty.Size = new System.Drawing.Size(100, 20);
-            this.txtCty.TabIndex = 8;
+            this.txtCty.TabIndex = 12;
             // 
             // label9
             // 
@@ -202,7 +202,7 @@
             this.txtBang1.Location = new System.Drawing.Point(224, 56);
             this.txtBang1.Name = "txtBang1";
             this.txtBang1.Size = new System.Drawing.Size(100, 20);
-            this.txtBang1.TabIndex = 6;
+            this.txtBang1.TabIndex = 11;
             // 
             // label8
             // 
@@ -223,7 +223,7 @@
             this.cboCN.Location = new System.Drawing.Point(10, 80);
             this.cboCN.Name = "cboCN";
             this.cboCN.Size = new System.Drawing.Size(144, 21);
-            this.cboCN.TabIndex = 4;
+            this.cboCN.TabIndex = 10;
             // 
             // label7
             // 
@@ -240,7 +240,7 @@
             this.radCaoDang.Location = new System.Drawing.Point(444, 29);
             this.radCaoDang.Name = "radCaoDang";
             this.radCaoDang.Size = new System.Drawing.Size(72, 17);
-            this.radCaoDang.TabIndex = 2;
+            this.radCaoDang.TabIndex = 9;
             this.radCaoDang.TabStop = true;
             this.radCaoDang.Text = "Cao đẳng";
             this.radCaoDang.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             this.radBang2.Location = new System.Drawing.Point(225, 29);
             this.radBang2.Name = "radBang2";
             this.radBang2.Size = new System.Drawing.Size(67, 17);
-            this.radBang2.TabIndex = 1;
+            this.radBang2.TabIndex = 8;
             this.radBang2.TabStop = true;
             this.radBang2.Text = "Bằng hai";
             this.radBang2.UseVisualStyleBackColor = true;
@@ -264,7 +264,7 @@
             this.radDaiHoc.Location = new System.Drawing.Point(7, 29);
             this.radDaiHoc.Name = "radDaiHoc";
             this.radDaiHoc.Size = new System.Drawing.Size(62, 17);
-            this.radDaiHoc.TabIndex = 0;
+            this.radDaiHoc.TabIndex = 7;
             this.radDaiHoc.TabStop = true;
             this.radDaiHoc.Text = "Đại học";
             this.radDaiHoc.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.btnThem.Location = new System.Drawing.Point(15, 305);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 4;
+            this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.OnClickAddStudentButton);
@@ -289,7 +289,7 @@
             this.btnSua.Location = new System.Drawing.Point(96, 305);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 5;
+            this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -301,7 +301,7 @@
             this.btnXoa.Location = new System.Drawing.Point(177, 305);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 6;
+            this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -312,7 +312,7 @@
             this.btnReset.Location = new System.Drawing.Point(492, 305);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(81, 23);
-            this.btnReset.TabIndex = 7;
+            this.btnReset.TabIndex = 16;
             this.btnReset.Text = "Đặt lại";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -342,7 +342,7 @@
             this.lvwSinhVien.Location = new System.Drawing.Point(7, 19);
             this.lvwSinhVien.Name = "lvwSinhVien";
             this.lvwSinhVien.Size = new System.Drawing.Size(545, 177);
-            this.lvwSinhVien.TabIndex = 0;
+            this.lvwSinhVien.TabIndex = 17;
             this.lvwSinhVien.UseCompatibleStateImageBehavior = false;
             this.lvwSinhVien.View = System.Windows.Forms.View.Details;
             this.lvwSinhVien.SelectedIndexChanged += new System.EventHandler(this.ListView_OnSelectedStudentRow);
@@ -386,7 +386,7 @@
             this.btnThoat.Location = new System.Drawing.Point(492, 554);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 18;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -396,7 +396,7 @@
             this.dtpNS.Location = new System.Drawing.Point(75, 121);
             this.dtpNS.Name = "dtpNS";
             this.dtpNS.Size = new System.Drawing.Size(167, 20);
-            this.dtpNS.TabIndex = 10;
+            this.dtpNS.TabIndex = 5;
             // 
             // label10
             // 
@@ -413,7 +413,7 @@
             this.btnCancel.Location = new System.Drawing.Point(408, 305);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
