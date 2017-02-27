@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Order Application", "E-Or
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManaging", "StudentManaging\StudentManaging.csproj", "{264636D4-B296-481F-8235-8DF6D0386383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLySinhVien", "QuanLySinhVien\QuanLySinhVien.csproj", "{08CD68FF-BE2E-4BAE-8E9C-8C49A7C0E321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagingVer2", "StudentManagingVer2\StudentManagingVer2.csproj", "{396C596A-69EA-43B8-9D71-3D87F5D425D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{264636D4-B296-481F-8235-8DF6D0386383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{264636D4-B296-481F-8235-8DF6D0386383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{264636D4-B296-481F-8235-8DF6D0386383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CD68FF-BE2E-4BAE-8E9C-8C49A7C0E321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CD68FF-BE2E-4BAE-8E9C-8C49A7C0E321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CD68FF-BE2E-4BAE-8E9C-8C49A7C0E321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CD68FF-BE2E-4BAE-8E9C-8C49A7C0E321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
