@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLySinhVien", "QuanLySin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagingVer2", "StudentManagingVer2\StudentManagingVer2.csproj", "{396C596A-69EA-43B8-9D71-3D87F5D425D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManaging3LayersDemo", "StudentManaging3LayersDemo\StudentManaging3LayersDemo.csproj", "{40129566-FA52-4EAC-8273-C263B9CFD768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{396C596A-69EA-43B8-9D71-3D87F5D425D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40129566-FA52-4EAC-8273-C263B9CFD768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40129566-FA52-4EAC-8273-C263B9CFD768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40129566-FA52-4EAC-8273-C263B9CFD768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40129566-FA52-4EAC-8273-C263B9CFD768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using QuanLySinhVien;
 using StudentManagingVer2.Forms;
+using StudentManagingVer2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace StudentManagingVer2
 {
     public partial class MainForm : Form
     {
+        private DBHelper DBHelper = new DBHelper();
         public MainForm()
         {
             InitializeComponent();
@@ -23,27 +25,36 @@ namespace StudentManagingVer2
 
         private void LoadStudentListToDataGrid()
         {
-            SqlConnection conn = DBUtils.OpenConnection();
-
-            if (conn != null)
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM SV", conn);
-                DataSet s = new DataSet();
-                dataAdapter.Fill(s, "SV");
-                dgvSinhVien.DataSource = s.Tables[0];
-                conn.Close();
-            }
-        }
-
-        private void dgvSinhVien_SelectionChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Row was selected.");
+            dgvSinhVien.DataSource = DBHelper.DBExcuteQuery("SELECT * FROM SV");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddStudentForm form = new AddStudentForm();
+            form.addStudent += new AddStudentForm.AddStudent(LoadStudentListToDataGrid);
             form.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewSelectedRowCollection item = dgvSinhVien.SelectedRows;
+                int index = dgvSinhVien.SelectedCells[0].RowIndex;
+                DataGridViewRow row = dgvSinhVien.Rows[index];
+
+                Student s = new Student();
+                s.MSSV = row.Cells[0].Value.ToString(); ;
+                s.Name = row.Cells[1].Value.ToString(); ;
+                s.DiaChi = row.Cells[3].Value.ToString(); ;
+                s.NienKhoa = row.Cells[5].Value.ToString(); ;
+
+                EditStudentForm form = new EditStudentForm();
+                form.updateData = new EditStudentForm.UpdateData(LoadStudentListToDataGrid);
+                form.setStudentData(s);
+                form.Show();
+            }
+            catch (Exception) { MessageBox.Show("Error"); }
         }
     }
 }

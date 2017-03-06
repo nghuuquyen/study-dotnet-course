@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{396C596A-69EA-43B8-9D71-3D87F5D425D7}</ProjectGuid>
+    <ProjectGuid>{40129566-FA52-4EAC-8273-C263B9CFD768}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StudentManagingVer2</RootNamespace>
-    <AssemblyName>StudentManagingVer2</AssemblyName>
+    <RootNamespace>StudentManaging3LayersDemo</RootNamespace>
+    <AssemblyName>StudentManaging3LayersDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,38 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="DBUtils.cs" />
-    <Compile Include="DTO\StudentRepository.cs" />
-    <Compile Include="Forms\AddStudentForm.cs">
+    <Compile Include="BLL\StudentBLL.cs" />
+    <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DAL\StudentDAL.cs" />
+    <Compile Include="GUI\StudentMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddStudentForm.Designer.cs">
-      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    <Compile Include="GUI\StudentMainForm.Designer.cs">
+      <DependentUpon>StudentMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditStudentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditStudentForm.Designer.cs">
-      <DependentUpon>EditStudentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="DTO\Lop.cs" />
+    <Compile Include="DTO\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddStudentForm.resx">
-      <DependentUpon>AddStudentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditStudentForm.resx">
-      <DependentUpon>EditStudentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\StudentMainForm.resx">
+      <DependentUpon>StudentMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

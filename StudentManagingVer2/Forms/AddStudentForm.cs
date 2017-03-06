@@ -1,4 +1,5 @@
 ﻿using QuanLySinhVien;
+using StudentManagingVer2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,34 +15,59 @@ namespace StudentManagingVer2.Forms
 {
     public partial class AddStudentForm : Form
     {
+        private DBHelper DBHelper = new DBHelper();
+        public delegate void AddStudent();
+        public AddStudent addStudent;
+
         public AddStudentForm()
         {
             InitializeComponent();
+            GetListClass();
+        }
+
+        public void GetListClass()
+        {
+            SqlConnection conn = DBUtils.OpenConnection();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand("", conn);
+                cmd.CommandText = "SELECT * FROM Lop";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbLop.Items.Add(reader["ID_Lop"]);
+                }
+                conn.Close();
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = DBUtils.OpenConnection();
+            string sqlCmd = "INSERT INTO SV(MSSV , Name , DiaChi, Nien_Khoa, ID_Lop , Date)"
+                          + " VALUES(" 
+                          + "'" + txtMSSV.Text + "',"
+                          + "'" + txtTen.Text + "',"
+                          + "'" + DateTime.Now.ToShortDateString() + "',"
+                          + "'" + txtDiaChi.Text + "',"
+                          + "'" + "" + "',"
+                          + "'" + txtNienKhoa.Text + "',"
+                          + "'" + cbLop.SelectedText + "'"
+                          + ")";
 
-            if (conn != null)
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM SV", conn);
-                SqlCommandBuilder buider = new SqlCommandBuilder(dataAdapter);
-                DataSet s = new DataSet();
-                dataAdapter.Fill(s, "SV");
-                DataTable table = s.Tables[0];
+            DBHelper.DBExcuteNonQuery(sqlCmd);
 
-                DataRow newRow = table.NewRow();
-                newRow["Name"] = txtTen.Text;
-                newRow["DiaChi"] = txtDiaChi.Text;
-                table.Rows.Add(newRow);
+            if (addStudent != null)
+                addStudent.Invoke();
 
-                buider.DataAdapter.Update(table);
-                conn.Close();
+            // If completed close form.
+            this.Close();
+        }
 
-                // If completed close form.
-                this.Close();
-            }
+        private void AddStudentForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

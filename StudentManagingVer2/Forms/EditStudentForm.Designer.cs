@@ -1,6 +1,6 @@
 ﻿namespace StudentManagingVer2.Forms
 {
-    partial class AddStudentForm
+    partial class EditStudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,6 @@
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbLop = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,30 +123,11 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Niên Khóa";
             // 
-            // cbLop
-            // 
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(91, 174);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(158, 21);
-            this.cbLop.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 177);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Lớp";
-            // 
-            // AddStudentForm
+            // EditStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 372);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbLop);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMSSV);
@@ -159,9 +138,8 @@
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddStudentForm";
+            this.Name = "EditStudentForm";
             this.Text = "AddStudentForm";
-            this.Load += new System.EventHandler(this.AddStudentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +157,5 @@
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbLop;
-        private System.Windows.Forms.Label label5;
     }
 }

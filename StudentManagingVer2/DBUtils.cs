@@ -18,7 +18,7 @@ namespace QuanLySinhVien
             {
                 conn.Open();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return null;
             }

@@ -81,7 +81,6 @@
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.Size = new System.Drawing.Size(401, 134);
             this.dgvSinhVien.TabIndex = 4;
-            this.dgvSinhVien.SelectionChanged += new System.EventHandler(this.dgvSinhVien_SelectionChanged);
             // 
             // label3
             // 
@@ -119,6 +118,7 @@
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSearch
             // 
