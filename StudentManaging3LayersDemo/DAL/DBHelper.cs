@@ -41,7 +41,7 @@ namespace StudentManagingVer2
             SqlCommand cmd = new SqlCommand(s, conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-          
+
             return reader;
         }
 
