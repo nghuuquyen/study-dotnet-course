@@ -33,13 +33,16 @@ namespace StudentManaging3LayersDemo.GUI
             Lop[] lops = lopBLL.getListLop();
             dgvSinhVien.DataSource = students;
 
+            // Add new columns for hold Ten Lop.
+            dgvSinhVien.Columns.Add("TEN_LOP", "Ten Lop");
+            
             for (int i = 0; i < students.Length; i++)
                 for (int j = 0; j < lops.Length; j++)
                 {
                     if (students[i].ID_Lop == lops[j].IDLop)
                     {
-                        // TODO: Should update ten lop like this.
-                        //dgvSinhVien.Columns[6].Rows[i].Name = lops[j].TenLop;
+                        // Index 7 is column Ten_Lop.
+                        dgvSinhVien.Rows[i].Cells[7].Value = lops[j].TenLop;
                     }
                 }
         }
