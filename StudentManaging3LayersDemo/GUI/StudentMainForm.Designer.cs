@@ -31,20 +31,21 @@
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSinhVien
             // 
             this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSinhVien.Location = new System.Drawing.Point(12, 87);
+            this.dgvSinhVien.Location = new System.Drawing.Point(12, 94);
             this.dgvSinhVien.Name = "dgvSinhVien";
-            this.dgvSinhVien.Size = new System.Drawing.Size(373, 150);
+            this.dgvSinhVien.Size = new System.Drawing.Size(583, 174);
             this.dgvSinhVien.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 264);
+            this.button1.Location = new System.Drawing.Point(12, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -54,7 +55,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(103, 264);
+            this.btnEdit.Location = new System.Drawing.Point(93, 287);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 2;
@@ -62,11 +63,22 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(520, 287);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Remove";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // StudentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 349);
+            this.ClientSize = new System.Drawing.Size(607, 349);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvSinhVien);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.DataGridView dgvSinhVien;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button button2;
     }
 }

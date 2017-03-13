@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentManagingStudentManaging3LayersDemo.Models
+namespace StudentManaging3LayersDemo
 {
     public class Student
     {

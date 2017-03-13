@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\LopBLL.cs" />
     <Compile Include="BLL\StudentBLL.cs" />
     <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DAL\LopDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="GUI\AddStudentForm.cs">
       <SubType>Form</SubType>
@@ -60,6 +62,12 @@
     </Compile>
     <Compile Include="GUI\EditStudentForm.Designer.cs">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RemoveStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RemoveStudentForm.Designer.cs">
+      <DependentUpon>RemoveStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\StudentMainForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditStudentForm.resx">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RemoveStudentForm.resx">
+      <DependentUpon>RemoveStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudentMainForm.resx">
       <DependentUpon>StudentMainForm.cs</DependentUpon>

@@ -1,5 +1,4 @@
-﻿using StudentManagingStudentManaging3LayersDemo.Models;
-using StudentManagingVer2.Forms;
+﻿using StudentManagingVer2.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +14,7 @@ namespace StudentManaging3LayersDemo.GUI
     public partial class StudentMainForm : Form
     {
         private StudentBLL studentBLL = new StudentBLL();
+        private LopBLL lopBLL = new LopBLL();
 
         public StudentMainForm()
         {
@@ -22,9 +22,26 @@ namespace StudentManaging3LayersDemo.GUI
             LoadStudentList();
         }
 
+        public void UpdateLopName()
+        {
+
+        }
+
         public void LoadStudentList()
         {
-            dgvSinhVien.DataSource = studentBLL.getStudents();
+            Student[] students = studentBLL.getStudents();
+            Lop[] lops = lopBLL.getListLop();
+            dgvSinhVien.DataSource = students;
+
+            for (int i = 0; i < students.Length; i++)
+                for (int j = 0; j < lops.Length; j++)
+                {
+                    if (students[i].ID_Lop == lops[j].IDLop)
+                    {
+                        // TODO: Should update ten lop like this.
+                        //dgvSinhVien.Columns[6].Rows[i].Name = lops[j].TenLop;
+                    }
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +53,25 @@ namespace StudentManaging3LayersDemo.GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // Form settings.
+            EditStudentForm form = new EditStudentForm();
+            form.updateData = new EditStudentForm.UpdateData(LoadStudentList);
+
+            // Set student selected.
+            form.setStudentData(getStudentSelectedFromGridView());
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RemoveStudentForm form = new RemoveStudentForm();
+            form.removeStudent = new RemoveStudentForm.RemoveStudent(LoadStudentList);
+            form.setStudentData(getStudentSelectedFromGridView());
+            form.Show();
+        }
+
+        private Student getStudentSelectedFromGridView()
+        {
             DataGridViewSelectedRowCollection item = dgvSinhVien.SelectedRows;
             int index = dgvSinhVien.SelectedCells[0].RowIndex;
             DataGridViewRow row = dgvSinhVien.Rows[index];
@@ -44,15 +80,9 @@ namespace StudentManaging3LayersDemo.GUI
             s.MSSV = row.Cells[0].Value.ToString(); ;
             s.Name = row.Cells[1].Value.ToString(); ;
             s.DiaChi = row.Cells[3].Value.ToString(); ;
-            s.NienKhoa = row.Cells[5].Value.ToString(); ;
-            
-            // Form settings.
-            EditStudentForm form = new EditStudentForm();
-            form.updateData = new EditStudentForm.UpdateData(LoadStudentList);
+            s.NienKhoa = row.Cells[5].Value.ToString();
 
-            // Set student selected.
-            form.setStudentData(s);
-            form.Show();
+            return s;
         }
     }
 }

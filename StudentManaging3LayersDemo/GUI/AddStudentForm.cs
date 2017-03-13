@@ -1,5 +1,4 @@
 ﻿using StudentManaging3LayersDemo;
-using StudentManagingStudentManaging3LayersDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +15,7 @@ namespace StudentManagingVer2.Forms
     public partial class AddStudentForm : Form
     {
         private StudentBLL studentBLL = new StudentBLL();
+        private LopBLL lopBll = new LopBLL();
         public delegate void AddStudent();
         public AddStudent addStudent;
         private DBHelper dbHeper = new DBHelper();
@@ -28,10 +28,9 @@ namespace StudentManagingVer2.Forms
 
         public void GetListClass()
         {
-            SqlDataReader reader = dbHeper.DBExcuteReader("Select * From lop");
-            while(reader.Read())
+            foreach(var item in lopBll.getListLop())
             {
-                cbLop.Items.Add(reader["id_lop"]);
+                cbLop.Items.Add(item.IDLop);
             }
         }
 

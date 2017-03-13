@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace StudentManaging3LayersDemo
 {
-    class Lop
+    class LopBLL
     {
-        public string IDLop { get; set; }
-        public string TenLop { get; set; }
+        private LopDAL lopDAL = new LopDAL();
+        public Lop[] getListLop()
+        {
+            return lopDAL.getListLop();
+        }
     }
 }

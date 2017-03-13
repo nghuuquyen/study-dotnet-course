@@ -1,5 +1,4 @@
-﻿using StudentManagingStudentManaging3LayersDemo.Models;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +25,9 @@ namespace StudentManaging3LayersDemo
             studentDAL.update(s);
         }
 
+        public void removeStudent(Student s)
+        {
+            studentDAL.remove(s);
+        }
     }
 }

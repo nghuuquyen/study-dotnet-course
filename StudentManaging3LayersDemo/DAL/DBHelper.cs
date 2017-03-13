@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentManagingVer2
+namespace StudentManaging3LayersDemo
 {
     class DBHelper
     {

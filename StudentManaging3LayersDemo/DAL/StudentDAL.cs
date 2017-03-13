@@ -1,5 +1,4 @@
-﻿using StudentManagingStudentManaging3LayersDemo.Models;
-using StudentManagingVer2;
+﻿using StudentManagingVer2;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -67,7 +66,13 @@ namespace StudentManaging3LayersDemo
                           + "'" + DateTime.Now.ToShortDateString() + "'"
                           + ")";
 
-            MessageBox.Show(sqlCmd);
+            DBHelper.DBExcuteNonQuery(sqlCmd);
+        }
+
+        public void remove(Student s)
+        {
+            string sqlCmd = "DELETE FROM SV WHERE MSSV = ";
+            sqlCmd += s.MSSV;
 
             DBHelper.DBExcuteNonQuery(sqlCmd);
         }
