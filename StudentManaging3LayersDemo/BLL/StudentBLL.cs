@@ -10,10 +10,21 @@ namespace StudentManaging3LayersDemo
 {
     public class StudentBLL
     {
-        private StudentDTO studentDTO = new StudentDTO();
+        private StudentDAL studentDAL = new StudentDAL();
         public Student[] getStudents()
         {
-            return studentDTO.getAllStudents();
+            return studentDAL.getAllStudents();
         }
+
+        public void saveStudent(Student s)
+        {
+            studentDAL.save(s);
+        }
+
+        public void updateStudent(Student s)
+        {
+            studentDAL.update(s);
+        }
+
     }
 }

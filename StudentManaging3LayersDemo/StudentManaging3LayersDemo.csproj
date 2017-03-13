@@ -49,6 +49,18 @@
     <Compile Include="BLL\StudentBLL.cs" />
     <Compile Include="DAL\DBHelper.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
+    <Compile Include="GUI\AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditStudentForm.Designer.cs">
+      <DependentUpon>EditStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\StudentMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +71,12 @@
     <Compile Include="DTO\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditStudentForm.resx">
+      <DependentUpon>EditStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudentMainForm.resx">
       <DependentUpon>StudentMainForm.cs</DependentUpon>
     </EmbeddedResource>
