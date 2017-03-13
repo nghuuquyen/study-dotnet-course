@@ -29,5 +29,10 @@ namespace StudentManaging3LayersDemo
         {
             studentDAL.remove(s);
         }
+
+        public Student[] searchByStudentName(string name)
+        {
+            return studentDAL.findByName(name);
+        }
     }
 }

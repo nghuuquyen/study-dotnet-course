@@ -16,6 +16,9 @@ namespace StudentManaging3LayersDemo.GUI
         private StudentBLL studentBLL = new StudentBLL();
         private LopBLL lopBLL = new LopBLL();
 
+        public delegate void SearchStudentByName(string name);
+        public SearchStudentByName searchStudentByName;
+
         public StudentMainForm()
         {
             InitializeComponent();
@@ -32,17 +35,14 @@ namespace StudentManaging3LayersDemo.GUI
             Student[] students = studentBLL.getStudents();
             Lop[] lops = lopBLL.getListLop();
             dgvSinhVien.DataSource = students;
-
-            // Add new columns for hold Ten Lop.
-            dgvSinhVien.Columns.Add("TEN_LOP", "Ten Lop");
-            
+  
             for (int i = 0; i < students.Length; i++)
                 for (int j = 0; j < lops.Length; j++)
                 {
                     if (students[i].ID_Lop == lops[j].IDLop)
                     {
                         // Index 7 is column Ten_Lop.
-                        dgvSinhVien.Rows[i].Cells[7].Value = lops[j].TenLop;
+                        //dgvSinhVien.Rows[i].Cells[7].Value = lops[j].TenLop;
                     }
                 }
         }
@@ -68,7 +68,7 @@ namespace StudentManaging3LayersDemo.GUI
         private void button2_Click(object sender, EventArgs e)
         {
             RemoveStudentForm form = new RemoveStudentForm();
-            form.removeStudent = new RemoveStudentForm.RemoveStudent(LoadStudentList);
+            form.removeStudent = new RemoveStudentForm.RemoveStudent(removeSelectedStudent);
             form.setStudentData(getStudentSelectedFromGridView());
             form.Show();
         }
@@ -80,12 +80,25 @@ namespace StudentManaging3LayersDemo.GUI
             DataGridViewRow row = dgvSinhVien.Rows[index];
 
             Student s = new Student();
-            s.MSSV = row.Cells[0].Value.ToString(); ;
-            s.Name = row.Cells[1].Value.ToString(); ;
-            s.DiaChi = row.Cells[3].Value.ToString(); ;
+            s.MSSV = row.Cells[0].Value.ToString();
+            s.Name = row.Cells[1].Value.ToString();
+            s.DiaChi = row.Cells[3].Value.ToString();
             s.NienKhoa = row.Cells[5].Value.ToString();
 
             return s;
+        }
+
+        private void removeSelectedStudent(Student s)
+        {
+            studentBLL.removeStudent(s);
+            LoadStudentList();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            StudentSearchForm form = new StudentSearchForm();
+            form.prepareSearchByName(txtSearch.Text);
+            form.Show();
         }
     }
 }

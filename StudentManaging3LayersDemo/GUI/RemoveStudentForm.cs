@@ -14,7 +14,7 @@ namespace StudentManaging3LayersDemo.GUI
     {
         private StudentBLL studentBLL = new StudentBLL();
         private Student studentSelected = null;
-        public delegate void RemoveStudent();
+        public delegate void RemoveStudent(Student s);
         public RemoveStudent removeStudent;
 
         public RemoveStudentForm()
@@ -34,12 +34,12 @@ namespace StudentManaging3LayersDemo.GUI
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            if (studentSelected != null)
-                studentBLL.removeStudent(studentSelected);
+            if (studentSelected == null)
+                return;
 
             // Call method for update main form.
             if (removeStudent != null)
-                removeStudent.Invoke();
+                removeStudent.Invoke(studentSelected);
 
             this.Close();
         }

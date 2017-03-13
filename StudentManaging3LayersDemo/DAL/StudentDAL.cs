@@ -76,5 +76,20 @@ namespace StudentManaging3LayersDemo
 
             DBHelper.DBExcuteNonQuery(sqlCmd);
         }
+
+        public Student[] findByName(string name)
+        {
+            string sqlCmd = "SELECT * FROM SV WHERE SV.Name LIKE " + "'%" + name + "%'" ;
+            DataTable d = DBHelper.DBExcuteQuery(sqlCmd);
+            int count = d.Rows.Count;
+
+            Student[] students = new Student[count];
+            for (int i = 0; i < count; i++)
+            {
+                students[i] = GetStudentFromDataRow(d.Rows[i]);
+            }
+
+            return students;
+        }
     }
 }
