@@ -56,17 +56,20 @@ namespace StudentManaging3LayersDemo
 
         public void save(Student sv)
         {
-            string sqlCmd = "INSERT INTO SV(MSSV , Name , DiaChi, Nien_Khoa, ID_Lop , Date)"
-                          + " VALUES("
-                          + "'" + sv.MSSV + "',"
-                          + "'" + sv.Name + "',"
-                          + "'" + sv.DiaChi + "',"
-                          + "'" + sv.NienKhoa + "',"
-                          + "'" + sv.ID_Lop + "',"
-                          + "'" + DateTime.Now.ToShortDateString() + "'"
-                          + ")";
+            string sqlCmd = "INSERT INTO SV(MSSV , Name , DiaChi, Nien_Khoa, ID_Lop , Date) "
+                          + "VALUES(@MSSV ,@Name ,@DiaChi,@Nien_Khoa,@ID_Lop ,@Date)";
+            DBHelper.OpenConnection();
+            SqlCommand cmd = DBHelper.GetSqlCommand(sqlCmd);
 
-            DBHelper.DBExcuteNonQuery(sqlCmd);
+            cmd.Parameters.AddWithValue("@MSSV", sv.MSSV);
+            cmd.Parameters.AddWithValue("@Name", sv.Name);
+            cmd.Parameters.AddWithValue("@DiaChi", sv.DiaChi);
+            cmd.Parameters.AddWithValue("@Nien_Khoa", sv.NienKhoa);
+            cmd.Parameters.AddWithValue("@ID_Lop", sv.ID_Lop);
+            cmd.Parameters.AddWithValue("@Date", sv.Date);
+
+            cmd.ExecuteNonQuery();
+            DBHelper.CloseConnection();
         }
 
         public void remove(Student s)

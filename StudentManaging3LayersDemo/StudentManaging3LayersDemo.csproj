@@ -63,6 +63,12 @@
     <Compile Include="GUI\EditStudentForm.Designer.cs">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FilterByClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FilterByClassForm.Designer.cs">
+      <DependentUpon>FilterByClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RemoveStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditStudentForm.resx">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FilterByClassForm.resx">
+      <DependentUpon>FilterByClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RemoveStudentForm.resx">
       <DependentUpon>RemoveStudentForm.cs</DependentUpon>

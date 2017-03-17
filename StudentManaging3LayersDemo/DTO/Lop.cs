@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace StudentManaging3LayersDemo
 {
-    class Lop
+    public class Lop
     {
         public string IDLop { get; set; }
         public string TenLop { get; set; }
+
+        public override string ToString()
+        {
+            return TenLop;
+        }
     }
 }

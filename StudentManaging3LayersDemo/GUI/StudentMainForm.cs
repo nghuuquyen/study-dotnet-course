@@ -35,14 +35,17 @@ namespace StudentManaging3LayersDemo.GUI
             Student[] students = studentBLL.getStudents();
             Lop[] lops = lopBLL.getListLop();
             dgvSinhVien.DataSource = students;
-  
+            
+            // Change the name of column.
+            dgvSinhVien.Columns[6].HeaderText = "Ten Lop";
+            dgvSinhVien.Columns[6].Name = "TEN_LOP";
+
             for (int i = 0; i < students.Length; i++)
                 for (int j = 0; j < lops.Length; j++)
                 {
                     if (students[i].ID_Lop == lops[j].IDLop)
                     {
-                        // Index 7 is column Ten_Lop.
-                        //dgvSinhVien.Rows[i].Cells[7].Value = lops[j].TenLop;
+                        dgvSinhVien.Rows[i].Cells["TEN_LOP"].Value = lops[j].TenLop;
                     }
                 }
         }
@@ -75,17 +78,8 @@ namespace StudentManaging3LayersDemo.GUI
 
         private Student getStudentSelectedFromGridView()
         {
-            DataGridViewSelectedRowCollection item = dgvSinhVien.SelectedRows;
             int index = dgvSinhVien.SelectedCells[0].RowIndex;
-            DataGridViewRow row = dgvSinhVien.Rows[index];
-
-            Student s = new Student();
-            s.MSSV = row.Cells[0].Value.ToString();
-            s.Name = row.Cells[1].Value.ToString();
-            s.DiaChi = row.Cells[3].Value.ToString();
-            s.NienKhoa = row.Cells[5].Value.ToString();
-
-            return s;
+            return ((Student[])dgvSinhVien.DataSource)[index];
         }
 
         private void removeSelectedStudent(Student s)
@@ -98,6 +92,12 @@ namespace StudentManaging3LayersDemo.GUI
         {
             StudentSearchForm form = new StudentSearchForm();
             form.prepareSearchByName(txtSearch.Text);
+            form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FilterByClassForm form = new FilterByClassForm();
             form.Show();
         }
     }

@@ -34,5 +34,10 @@ namespace StudentManaging3LayersDemo
         {
             return studentDAL.findByName(name);
         }
+
+        public Student[] getListStudentByClass(Lop lop)
+        {
+            return studentDAL.getAllStudents().Where(item => item.ID_Lop == lop.IDLop).ToArray();
+        }
     }
 }

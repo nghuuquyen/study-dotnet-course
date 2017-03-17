@@ -45,6 +45,16 @@ namespace StudentManaging3LayersDemo
             return reader;
         }
 
+        public SqlCommand GetSqlCommand(string s)
+        {
+            return new SqlCommand(s, conn);
+        }
+
+        public void OpenConnection()
+        {
+            conn.Open();
+        }
+
         public void CloseConnection ()
         {
             conn.Close();
