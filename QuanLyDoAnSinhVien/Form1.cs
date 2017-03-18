@@ -89,6 +89,7 @@ namespace QuanLyDoAnSinhVien
                 return;
 
             doAnBll.remove(getStudentSelectedFromGridView());
+            dataGridView.DataSource = doAnBll.getListDoAn();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

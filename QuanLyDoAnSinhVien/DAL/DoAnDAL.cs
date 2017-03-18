@@ -86,7 +86,7 @@ namespace QuanLyDoAnSinhVien.DAL
         public void remove(DoAn da)
         {
             string sqlCmd = "DELETE FROM DoAN WHERE Ma_Do_An = ";
-            sqlCmd += da.MaDoAn;
+            sqlCmd += "'" + da.MaDoAn.Trim() + "'";
 
             DBHelper.DBExcuteNonQuery(sqlCmd);
         }
