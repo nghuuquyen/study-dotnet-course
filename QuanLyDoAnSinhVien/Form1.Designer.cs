@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridView dgvDoAn;
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_Do_An = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_SV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HuongNC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GVHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tinh_Trang = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NamBaoVe = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.qLDoAnDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.qL_Do_AnDataSet = new QuanLyDoAnSinhVien.QL_Do_AnDataSet();
             this.qLDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,72 +44,11 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            dgvDoAn = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(dgvDoAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDoAnDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_Do_AnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDoAnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvDoAn
-            // 
-            dgvDoAn.AutoGenerateColumns = false;
-            dgvDoAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDoAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Ten_Do_An,
-            this.Ten_SV,
-            this.HuongNC,
-            this.GVHD,
-            this.Tinh_Trang,
-            this.NamBaoVe});
-            dgvDoAn.DataSource = this.qLDoAnDataSetBindingSource1;
-            dgvDoAn.Location = new System.Drawing.Point(12, 38);
-            dgvDoAn.Name = "dgvDoAn";
-            dgvDoAn.Size = new System.Drawing.Size(901, 228);
-            dgvDoAn.TabIndex = 0;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // Ten_Do_An
-            // 
-            this.Ten_Do_An.HeaderText = "Tên Đề Tài";
-            this.Ten_Do_An.Name = "Ten_Do_An";
-            // 
-            // Ten_SV
-            // 
-            this.Ten_SV.HeaderText = "SV Thực Hiện";
-            this.Ten_SV.Name = "Ten_SV";
-            // 
-            // HuongNC
-            // 
-            this.HuongNC.HeaderText = "Hướng NC";
-            this.HuongNC.Name = "HuongNC";
-            // 
-            // GVHD
-            // 
-            this.GVHD.HeaderText = "GVHD";
-            this.GVHD.Name = "GVHD";
-            // 
-            // Tinh_Trang
-            // 
-            this.Tinh_Trang.HeaderText = "Tình Trạng";
-            this.Tinh_Trang.Name = "Tinh_Trang";
-            // 
-            // NamBaoVe
-            // 
-            this.NamBaoVe.HeaderText = "Năm Bảo Vệ";
-            this.NamBaoVe.Items.AddRange(new object[] {
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019"});
-            this.NamBaoVe.Name = "NamBaoVe";
             // 
             // qLDoAnDataSetBindingSource1
             // 
@@ -234,16 +165,16 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(13, 426);
+            this.dataGridView.Location = new System.Drawing.Point(13, 22);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(900, 150);
+            this.dataGridView.Size = new System.Drawing.Size(900, 245);
             this.dataGridView.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 658);
+            this.ClientSize = new System.Drawing.Size(925, 412);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
@@ -256,10 +187,8 @@
             this.Controls.Add(this.cbxGVHD);
             this.Controls.Add(this.cbxTinhTrang);
             this.Controls.Add(this.cbxHNC);
-            this.Controls.Add(dgvDoAn);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(dgvDoAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDoAnDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_Do_AnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDoAnDataSetBindingSource)).EndInit();
@@ -272,13 +201,6 @@
         #endregion
         private System.Windows.Forms.BindingSource qLDoAnDataSetBindingSource;
         private QL_Do_AnDataSet qL_Do_AnDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_Do_An;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_SV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HuongNC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GVHD;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Tinh_Trang;
-        private System.Windows.Forms.DataGridViewComboBoxColumn NamBaoVe;
         private System.Windows.Forms.ComboBox cbxHNC;
         private System.Windows.Forms.ComboBox cbxTinhTrang;
         private System.Windows.Forms.ComboBox cbxGVHD;

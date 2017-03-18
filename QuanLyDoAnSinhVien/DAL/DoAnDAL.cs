@@ -35,7 +35,7 @@ namespace QuanLyDoAnSinhVien.DAL
             s.TenDoAn = row["Ten_Do_An"].ToString();
             s.TenSV = row["Ten_SV"].ToString();
             s.NamThucHien = (int) row["Nam_Thuc_Hien"];
-            s.TinhTrang = false;
+            s.TinhTrang = (row["Tinh_Trang"]  as int? == 1) ? true : false;
             s.Ma_Huong_NC = row["Ma_Huong_NC"].ToString();
             s.ID_GVHD = row["ID_GVHD"].ToString();
             return s;
@@ -45,8 +45,8 @@ namespace QuanLyDoAnSinhVien.DAL
         {
             string updateCmdString = "";
             updateCmdString = " UPDATE DoAN"
-            + " SET Ma_Do_An = @MDA, Ten_Do_An = @TDA , Ten_SV = @TSV, Nam_Thuc_Hien = @NTH, Tinh_Trang = @TT, Ma_Huong_NC = @MHNC, ID_GVHD = @ID_GVHD";
-
+            + " SET Ten_Do_An = @TDA , Ten_SV = @TSV, Nam_Thuc_Hien = @NTH, Tinh_Trang = @TT, Ma_Huong_NC = @MHNC, ID_GVHD = @ID_GVHD"
+            + " WHERE Ma_Do_An = @MDA";
 
             DBHelper.OpenConnection();
             SqlCommand cmd = DBHelper.GetSqlCommand(updateCmdString);
