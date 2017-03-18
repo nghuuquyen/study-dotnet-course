@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QL_Do_AnDataSet" targetNamespace="http://tempuri.org/QL_Do_AnDataSet.xsd" xmlns:mstns="http://tempuri.org/QL_Do_AnDataSet.xsd" xmlns="http://tempuri.org/QL_Do_AnDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QL_Do_AnConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QL_Do_AnConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyDoAnSinhVien.Properties.Settings.GlobalReference.Default.QL_Do_AnConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DoANTableAdapter" GeneratorDataComponentClassName="DoANTableAdapter" Name="DoAN" UserDataComponentName="DoANTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_Do_AnConnectionString (Settings)" DbObjectName="QL_Do_An.dbo.DoAN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ten_Do_An, Ten_SV, Nam_Thuc_Hien, Tinh_Trang FROM dbo.DoAN</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ten_Do_An" DataSetColumn="Ten_Do_An" />
+              <Mapping SourceColumn="Ten_SV" DataSetColumn="Ten_SV" />
+              <Mapping SourceColumn="Nam_Thuc_Hien" DataSetColumn="Nam_Thuc_Hien" />
+              <Mapping SourceColumn="Tinh_Trang" DataSetColumn="Tinh_Trang" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GVHDTableAdapter" GeneratorDataComponentClassName="GVHDTableAdapter" Name="GVHD" UserDataComponentName="GVHDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_Do_AnConnectionString (Settings)" DbObjectName="QL_Do_An.dbo.GVHD" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ten FROM dbo.GVHD</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ten" DataSetColumn="Ten" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HuongNghienCuuTableAdapter" GeneratorDataComponentClassName="HuongNghienCuuTableAdapter" Name="HuongNghienCuu" UserDataComponentName="HuongNghienCuuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_Do_AnConnectionString (Settings)" DbObjectName="QL_Do_An.dbo.HuongNghienCuu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ten FROM dbo.HuongNghienCuu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ten" DataSetColumn="Ten" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QL_Do_AnDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QL_Do_AnDataSet" msprop:Generator_UserDSName="QL_Do_AnDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DoAN" msprop:Generator_TableClassName="DoANDataTable" msprop:Generator_TableVarName="tableDoAN" msprop:Generator_TablePropName="DoAN" msprop:Generator_RowDeletingName="DoANRowDeleting" msprop:Generator_RowChangingName="DoANRowChanging" msprop:Generator_RowEvHandlerName="DoANRowChangeEventHandler" msprop:Generator_RowDeletedName="DoANRowDeleted" msprop:Generator_UserTableName="DoAN" msprop:Generator_RowChangedName="DoANRowChanged" msprop:Generator_RowEvArgName="DoANRowChangeEvent" msprop:Generator_RowClassName="DoANRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ten_Do_An" msprop:Generator_ColumnVarNameInTable="columnTen_Do_An" msprop:Generator_ColumnPropNameInRow="Ten_Do_An" msprop:Generator_ColumnPropNameInTable="Ten_Do_AnColumn" msprop:Generator_UserColumnName="Ten_Do_An">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ten_SV" msprop:Generator_ColumnVarNameInTable="columnTen_SV" msprop:Generator_ColumnPropNameInRow="Ten_SV" msprop:Generator_ColumnPropNameInTable="Ten_SVColumn" msprop:Generator_UserColumnName="Ten_SV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nam_Thuc_Hien" msprop:Generator_ColumnVarNameInTable="columnNam_Thuc_Hien" msprop:Generator_ColumnPropNameInRow="Nam_Thuc_Hien" msprop:Generator_ColumnPropNameInTable="Nam_Thuc_HienColumn" msprop:Generator_UserColumnName="Nam_Thuc_Hien" type="xs:int" />
+              <xs:element name="Tinh_Trang" msprop:Generator_ColumnVarNameInTable="columnTinh_Trang" msprop:Generator_ColumnPropNameInRow="Tinh_Trang" msprop:Generator_ColumnPropNameInTable="Tinh_TrangColumn" msprop:Generator_UserColumnName="Tinh_Trang" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GVHD" msprop:Generator_TableClassName="GVHDDataTable" msprop:Generator_TableVarName="tableGVHD" msprop:Generator_TablePropName="GVHD" msprop:Generator_RowDeletingName="GVHDRowDeleting" msprop:Generator_RowChangingName="GVHDRowChanging" msprop:Generator_RowEvHandlerName="GVHDRowChangeEventHandler" msprop:Generator_RowDeletedName="GVHDRowDeleted" msprop:Generator_UserTableName="GVHD" msprop:Generator_RowChangedName="GVHDRowChanged" msprop:Generator_RowEvArgName="GVHDRowChangeEvent" msprop:Generator_RowClassName="GVHDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HuongNghienCuu" msprop:Generator_TableClassName="HuongNghienCuuDataTable" msprop:Generator_TableVarName="tableHuongNghienCuu" msprop:Generator_TablePropName="HuongNghienCuu" msprop:Generator_RowDeletingName="HuongNghienCuuRowDeleting" msprop:Generator_RowChangingName="HuongNghienCuuRowChanging" msprop:Generator_RowEvHandlerName="HuongNghienCuuRowChangeEventHandler" msprop:Generator_RowDeletedName="HuongNghienCuuRowDeleted" msprop:Generator_UserTableName="HuongNghienCuu" msprop:Generator_RowChangedName="HuongNghienCuuRowChanged" msprop:Generator_RowEvArgName="HuongNghienCuuRowChangeEvent" msprop:Generator_RowClassName="HuongNghienCuuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
