@@ -90,5 +90,25 @@ namespace QuanLyDoAnSinhVien
 
             doAnBll.remove(getStudentSelectedFromGridView());
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "")
+            {
+                dataGridView.DataSource = doAnBll.getListDoAn();
+                return;
+            }
+
+            DoAn[] data = (DoAn[])dataGridView.DataSource;
+
+            data = data.Where(item => item.TenDoAn.Contains(txtSearch.Text.Trim())).ToArray();
+
+            dataGridView.DataSource = data;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = doAnBll.getListDoAn();
+        }
     }
 }
