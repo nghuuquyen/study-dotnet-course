@@ -77,6 +77,9 @@
             // cbxTinhTrang
             // 
             this.cbxTinhTrang.FormattingEnabled = true;
+            this.cbxTinhTrang.Items.AddRange(new object[] {
+            "Đã bảo vệ",
+            "Chưa bảo vệ"});
             this.cbxTinhTrang.Location = new System.Drawing.Point(721, 334);
             this.cbxTinhTrang.Name = "cbxTinhTrang";
             this.cbxTinhTrang.Size = new System.Drawing.Size(192, 21);

@@ -39,17 +39,35 @@ namespace QuanLyDoAnSinhVien
 
         private void InitData()
         {
-            foreach(var item in gvhdBll.getAllGVHD())
+            var doans = doAnBll.getListDoAn();
+            var gvhds = gvhdBll.getAllGVHD();
+            var hncs = hcnBll.getAllHNC();
+
+            foreach (var item in gvhds)
             {
                 cbxGVHD.Items.Add(item);
             }
 
-            foreach (var item in hcnBll.getAllHNC())
+            foreach (var item in hncs)
             {
                 cbxHNC.Items.Add(item);
             }
 
             dataGridView.DataSource = doAnBll.getListDoAn();
+
+            //for (int i = 0; i < doans.Length; i++)
+            //    for (int j = 0; j < gvhds.Length; j++)
+            //    {
+            //        if (doans[i].ID_GVHD.Trim() == gvhds[j].ID_GVHD.Trim())
+            //        {
+            //            dataGridView.Rows[i].Cells[5].Value = gvhds[j].Ten.Trim();
+            //        }
+
+            //        if (doans[i].Ma_Huong_NC.Trim() == hncs[j].Ma_Huong_NC.Trim())
+            //        {
+            //            dataGridView.Rows[i].Cells[6].Value = hncs[j].Ten.Trim();
+            //        }
+            //    }
         }
      
 

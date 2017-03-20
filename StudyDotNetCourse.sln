@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManaging3LayersDemo"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDoAnSinhVien", "QuanLyDoAnSinhVien\QuanLyDoAnSinhVien.csproj", "{6C096565-34C9-40DB-8283-9906A6940A1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_Demo", "LINQ_Demo\LINQ_Demo.csproj", "{5EEDB68A-ECBE-484D-ACE2-42395C243783}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{6C096565-34C9-40DB-8283-9906A6940A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C096565-34C9-40DB-8283-9906A6940A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C096565-34C9-40DB-8283-9906A6940A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
