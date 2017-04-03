@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDoAnSinhVien", "QuanL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_Demo", "LINQ_Demo\LINQ_Demo.csproj", "{5EEDB68A-ECBE-484D-ACE2-42395C243783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLSV_LINQ_Demo", "QLSV_LINQ_Demo\QLSV_LINQ_Demo.csproj", "{94B5B04B-279D-4F94-822B-E883982C9E3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EEDB68A-ECBE-484D-ACE2-42395C243783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B5B04B-279D-4F94-822B-E883982C9E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B5B04B-279D-4F94-822B-E883982C9E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B5B04B-279D-4F94-822B-E883982C9E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B5B04B-279D-4F94-822B-E883982C9E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

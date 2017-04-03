@@ -12,6 +12,12 @@ namespace LINQ_Demo
 {
     public partial class MainForm : Form
     {
+        //NOTICES:
+        //---------------
+        // 1- Nên sử dụng Method của DBContext hơn là dùng câu lênh SQL, vì có thể ghép các phương
+        // thức với nhau dễ dàng.
+        //---------------
+
         // Cái này là tên của Class DataClassses trong file .dbml
         // Để tạo ra được cái file như thế này làm như sau.
         // 1- Từ Project chọn add new item.
@@ -64,14 +70,46 @@ namespace LINQ_Demo
             var result_9 = db.SVs.Where(s => s.Name.Contains("Nguyen Huu Quyen"))
                                  .Select(s => new { s.Name, s.Nien_Khoa }).Distinct();
 
-            //var result_10 = from sv in db.SVs
-            //                join lop in db.Lops
-            //                on sv.ID_Lop equals lop.ID_Lop
-            //                group by sv.Name;
+            // Sắp xếp giảm dần theo cột tên, mặc định tăng dần.
+            var result_10 = (from s in db.SVs
+                             orderby s.Name descending
+                             select new { s.MSSV, s.Name });
 
-                            
+            // Giống resule_10 nhưng sử dụng method của lớp DB context
+            var result_11 = db.SVs.OrderByDescending(s => s.Name).Select(s => new { s.MSSV, s.Name });
+
+            // Nối 2 bảng lại với nhau
+            var result_12 = from sv in db.SVs
+                            join lop in db.Lops
+                            on sv.ID_Lop equals lop.ID_Lop
+                            select new { sv.MSSV, sv.Name, lop.Ten_Lop };
+
+            // Câu lệnh Join khi dùng với DBContext method.
+            var result_14 = db.SVs.Join(db.Lops, sv => sv.ID_Lop, lop => lop.ID_Lop, (sv, lop) => new { sv.MSSV, sv.Name, lop.Ten_Lop });
+
+            // Câu lệnh Join lồng 3 bảng
+            // db.SVs.Join(db.Lops.John(...) , ...)
+
+
+            // Câu lệnh Group
+            var result_15 = from sv in db.SVs
+                            group sv by sv.ID_Lop into kq
+                            where kq.Key == 1
+                            select new { };
+
+            var result_16 = db.SVs.GroupBy(sv => sv.ID_Lop);
+            // Group by example.
+            // Nhóm dữ liệu, tính học bổng theo khoa.
+            // var sv = from p in db.SinhViens
+            //          join k in db.Khoas   
+            //          on p.MaKhoa equals k.MaKhoa
+            //          group by p.Khoa.TenKhoa into kq
+            //          select new {MaSV = kq.Key , TongHB = kq.Sum(t => t.HocBong)}
+
+            var result_17 = db.SVs.GroupBy(sv => sv.ID_Lop).Where(g => g.Key == 1);
+
             // Để các result_X vào để test.
-            dataGridView1.DataSource = result_9;
+            dataGridView1.DataSource = result_16;
         }
     }
 }
