@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53F102C4-972F-4CFE-B228-A18F55EF8BB4}</ProjectGuid>
+    <ProjectGuid>{12E455CD-C7C4-4496-8918-2D33B3F5CA3A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entity_Framwork_Code_First</RootNamespace>
-    <AssemblyName>Entity_Framwork_Code_First</AssemblyName>
+    <RootNamespace>Simple_EF_Code_First</RootNamespace>
+    <AssemblyName>Simple_EF_Code_First</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,7 +44,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -58,24 +57,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Khoa.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lop.cs" />
+    <Compile Include="Migrations\201705131605160_Add Khoa Model To Database.cs" />
+    <Compile Include="Migrations\201705131605160_Add Khoa Model To Database.Designer.cs">
+      <DependentUpon>201705131605160_Add Khoa Model To Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model1.cs" />
-    <Compile Include="Models\DataContextInitializer.cs" />
-    <Compile Include="Models\Lop.cs" />
-    <Compile Include="Models\MonHoc.cs" />
-    <Compile Include="Models\SinhVien.cs" />
-    <Compile Include="Models\SinhVienDiaChi.cs" />
-    <Compile Include="Models\SinhVienMonHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="StudentDBModel.cs" />
+    <Compile Include="SV.cs" />
+    <EmbeddedResource Include="Migrations\201705131605160_Add Khoa Model To Database.resx">
+      <DependentUpon>201705131605160_Add Khoa Model To Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
