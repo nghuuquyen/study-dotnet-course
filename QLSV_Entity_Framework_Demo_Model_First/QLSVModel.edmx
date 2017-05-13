@@ -15,6 +15,25 @@
         <EntityContainer Name="QLSVModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="MonHocs" EntityType="QLSVModel.MonHoc" />
           <EntitySet Name="SinhVienMonHocs" EntityType="QLSVModel.SinhVienMonHoc" />
+          <AssociationSet Name="MonHocSinhVienMonHoc" Association="QLSVModel.MonHocSinhVienMonHoc">
+            <End Role="MonHoc" EntitySet="MonHocs" />
+            <End Role="SinhVienMonHoc" EntitySet="SinhVienMonHocs" />
+          </AssociationSet>
+          <EntitySet Name="lops" EntityType="QLSVModel.lop" />
+          <EntitySet Name="Sinhviens" EntityType="QLSVModel.Sinhvien" />
+          <AssociationSet Name="SinhVienMonHocSinhvien" Association="QLSVModel.SinhVienMonHocSinhvien">
+            <End Role="SinhVienMonHoc" EntitySet="SinhVienMonHocs" />
+            <End Role="Sinhvien" EntitySet="Sinhviens" />
+          </AssociationSet>
+          <AssociationSet Name="lopSinhvien" Association="QLSVModel.lopSinhvien">
+            <End Role="lop" EntitySet="lops" />
+            <End Role="Sinhvien" EntitySet="Sinhviens" />
+          </AssociationSet>
+          <EntitySet Name="sinhviendiachis" EntityType="QLSVModel.sinhviendiachi" />
+          <AssociationSet Name="sinhviendiachiSinhvien" Association="QLSVModel.sinhviendiachiSinhvien">
+            <End Role="sinhviendiachi" EntitySet="sinhviendiachis" />
+            <End Role="Sinhvien" EntitySet="Sinhviens" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MonHoc">
           <Key>
@@ -22,13 +41,65 @@
           </Key>
           <Property Name="monhocid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten" Type="String" Nullable="false" />
+          <NavigationProperty Name="SinhVienMonHocs" Relationship="QLSVModel.MonHocSinhVienMonHoc" FromRole="MonHoc" ToRole="SinhVienMonHoc" />
         </EntityType>
         <EntityType Name="SinhVienMonHoc">
           <Key>
-            <PropertyRef Name="sinhvienid" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="sinhvienid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="String" Nullable="false" />
+          <Property Name="sinhvienid" Type="String" Nullable="false" />
+          <Property Name="monhocid" Type="String" Nullable="false" />
+          <NavigationProperty Name="MonHoc" Relationship="QLSVModel.MonHocSinhVienMonHoc" FromRole="SinhVienMonHoc" ToRole="MonHoc" />
+          <NavigationProperty Name="Sinhviens" Relationship="QLSVModel.SinhVienMonHocSinhvien" FromRole="SinhVienMonHoc" ToRole="Sinhvien" />
         </EntityType>
+        <Association Name="MonHocSinhVienMonHoc">
+          <End Type="QLSVModel.MonHoc" Role="MonHoc" Multiplicity="1" />
+          <End Type="QLSVModel.SinhVienMonHoc" Role="SinhVienMonHoc" Multiplicity="*" />
+        </Association>
+        <EntityType Name="lop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" Nullable="false" />
+          <NavigationProperty Name="Sinhviens" Relationship="QLSVModel.lopSinhvien" FromRole="lop" ToRole="Sinhvien" />
+        </EntityType>
+        <EntityType Name="Sinhvien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hoten" Type="String" Nullable="false" />
+          <Property Name="sodienthoai" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="lopid" Type="String" Nullable="false" />
+          <NavigationProperty Name="SinhVienMonHoc" Relationship="QLSVModel.SinhVienMonHocSinhvien" FromRole="Sinhvien" ToRole="SinhVienMonHoc" />
+          <NavigationProperty Name="lop" Relationship="QLSVModel.lopSinhvien" FromRole="Sinhvien" ToRole="lop" />
+          <NavigationProperty Name="sinhviendiachi" Relationship="QLSVModel.sinhviendiachiSinhvien" FromRole="Sinhvien" ToRole="sinhviendiachi" />
+        </EntityType>
+        <Association Name="SinhVienMonHocSinhvien">
+          <End Type="QLSVModel.SinhVienMonHoc" Role="SinhVienMonHoc" Multiplicity="1" />
+          <End Type="QLSVModel.Sinhvien" Role="Sinhvien" Multiplicity="*" />
+        </Association>
+        <Association Name="lopSinhvien">
+          <End Type="QLSVModel.lop" Role="lop" Multiplicity="1" />
+          <End Type="QLSVModel.Sinhvien" Role="Sinhvien" Multiplicity="*" />
+        </Association>
+        <EntityType Name="sinhviendiachi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diachi1" Type="String" Nullable="false" />
+          <Property Name="diachi2" Type="String" Nullable="false" />
+          <Property Name="thanhpho" Type="String" Nullable="false" />
+          <NavigationProperty Name="Sinhvien" Relationship="QLSVModel.sinhviendiachiSinhvien" FromRole="sinhviendiachi" ToRole="Sinhvien" />
+        </EntityType>
+        <Association Name="sinhviendiachiSinhvien">
+          <End Type="QLSVModel.sinhviendiachi" Role="sinhviendiachi" Multiplicity="1" />
+          <End Type="QLSVModel.Sinhvien" Role="Sinhvien" Multiplicity="1" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
