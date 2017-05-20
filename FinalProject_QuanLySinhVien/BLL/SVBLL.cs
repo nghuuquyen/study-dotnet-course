@@ -91,10 +91,10 @@ namespace FinalProject_QuanLySinhVien.BLL
             svDAL.remove(sv);
         }
 
-        public void findByID(int id)
+        public SV findByID(int id)
         {
             SVDAL svDAL = new SVDAL();
-            svDAL.findByID(id);
+            return svDAL.findByID(id);
         }
 
         public List<SV> getAll()

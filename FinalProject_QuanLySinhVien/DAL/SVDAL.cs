@@ -1,6 +1,7 @@
 ﻿using FinalProject_QuanLySinhVien.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,7 @@ namespace FinalProject_QuanLySinhVien.DAL
         {
             using (var db = new StudentDB())
             {
-                db.SVs.Remove(sv);
+                db.Entry(sv).State = EntityState.Deleted;
                 db.SaveChanges();
             }
         }

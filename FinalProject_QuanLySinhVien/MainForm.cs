@@ -42,6 +42,7 @@ namespace FinalProject_QuanLySinhVien
         {
             InitializeComponent();
             dvgSinhVien.AutoGenerateColumns = false;
+            dvgSinhVien.MultiSelect = true;
             LoadALLStudentToDataGrid();
             loadListKhoaToComboBox();
         }
@@ -95,7 +96,7 @@ namespace FinalProject_QuanLySinhVien
             if (vm.GioiTinh == true)
             {
                 rbnNu.Checked = false;
-                rbnNam.Checked = true;    
+                rbnNam.Checked = true;
             }
             else if (vm.GioiTinh == false)
             {
@@ -108,7 +109,7 @@ namespace FinalProject_QuanLySinhVien
         {
             StudentForm form = new StudentForm();
             form.Open(getSelectedStudentViewModelFromGrid());
-            
+
             form.createStudent = new StudentForm.CreateStudent(CreateStudent);
             form.updateStudent = new StudentForm.UpdateStudent(UpdateStudent);
         }
@@ -141,11 +142,11 @@ namespace FinalProject_QuanLySinhVien
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text != null)
+            if (txtSearch.Text != null)
             {
                 List<SV> searchResules = svBLL.findByName(txtSearch.Text);
                 List<StudentViewModel> results = new List<StudentViewModel>();
-                foreach(var sv in searchResules)
+                foreach (var sv in searchResules)
                 {
                     results.Add(svBLL.coverSVToStudentViewModel(sv));
                 }
@@ -168,7 +169,7 @@ namespace FinalProject_QuanLySinhVien
 
         private void ShowSortResult(SV[] datas)
         {
-            
+
             List<StudentViewModel> results = new List<StudentViewModel>();
             foreach (var sv in datas)
             {
@@ -187,7 +188,7 @@ namespace FinalProject_QuanLySinhVien
             // Index 2 : Sort by Khoa name.
             // Index 3 : Sort by Diem TB.
 
-            if(cbxSort.SelectedIndex == -1)
+            if (cbxSort.SelectedIndex == -1)
             {
                 MessageBox.Show("Please , choose sort method.");
                 return;
@@ -217,6 +218,25 @@ namespace FinalProject_QuanLySinhVien
                     this.Sort(results, cmp_4);
                     ShowSortResult(results);
                     break;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dvgSinhVien.SelectedCells.Count > 0)
+            {
+                foreach (DataGridViewRow row in dvgSinhVien.SelectedRows)
+                {
+                    int SVID;
+                    bool validID = Int32.TryParse(dvgSinhVien.Rows[row.Index].Cells["MSSV"].Value.ToString(), out SVID);
+
+                    if (validID)
+                    {
+                        svBLL.remove(svBLL.findByID(SVID));
+                    }
+                }
+                MessageBox.Show("Delete Completed");
+                LoadALLStudentToDataGrid();
             }
         }
     }
