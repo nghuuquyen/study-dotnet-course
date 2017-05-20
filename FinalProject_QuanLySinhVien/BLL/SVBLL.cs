@@ -45,8 +45,9 @@ namespace FinalProject_QuanLySinhVien.BLL
         public StudentViewModel coverSVToStudentViewModel(SV sv)
         {
             SVDAL svDAL = new SVDAL();
+            KhoaBLL khoaBLL = new KhoaBLL();
             StudentViewModel model = new StudentViewModel();
-
+            
             if (sv == null) return null;
 
             model.TenSV = sv.TenSV;
@@ -56,7 +57,8 @@ namespace FinalProject_QuanLySinhVien.BLL
             model.NgaySinh = sv.NgaySinh;
             model.QueQuan = sv.QueQuan;
             model.DiemTB = sv.DiemTB;
-            model.MaKhoa = sv.MaKhoa;
+            model.TenKhoa = sv.Khoa.Ten;
+
             return model;
         }
 
