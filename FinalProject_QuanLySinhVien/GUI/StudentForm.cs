@@ -43,7 +43,20 @@ namespace FinalProject_QuanLySinhVien.GUI
             txtHoKhau.Text = vm.HoKhau;
             txtDiemTB.Text = vm.DiemTB.ToString();
             dtpNgaySinh.Value = vm.NgaySinh.Value;
-            if(vm.MaKhoa != null)
+
+            int i = 0;
+            foreach (var item in cbxQueQuan.Items)
+            {
+                if (item.ToString().Contains(vm.QueQuan))
+                {
+                    cbxQueQuan.SelectedIndex = i;
+                    cbxQueQuan.Refresh();
+                    cbxQueQuan.Update();
+                }
+                i++;
+            }
+
+            if (vm.MaKhoa != null)
                 cbxKhoa.SelectedValue = vm.MaKhoa;
 
             cbxQueQuan.SelectedValue = vm.QueQuan;
