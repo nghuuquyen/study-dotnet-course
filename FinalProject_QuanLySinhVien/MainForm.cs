@@ -1,5 +1,6 @@
 ﻿using FinalProject_QuanLySinhVien.BLL;
 using FinalProject_QuanLySinhVien.DAL;
+using FinalProject_QuanLySinhVien.GUI;
 using FinalProject_QuanLySinhVien.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ namespace FinalProject_QuanLySinhVien
             {
                 dvgSinhVien.DataSource = svBLL.getDataGridViewModel();
             }
+            dvgSinhVien.Refresh();
+            dvgSinhVien.Update();
         }
 
         public StudentViewModel getSelectedStudentViewModelFromGrid()
@@ -53,7 +56,8 @@ namespace FinalProject_QuanLySinhVien
             txtHoTen.Text = vm.TenSV;
             txtHoKhau.Text = vm.HoKhau;
             txtDiemTB.Text = vm.DiemTB.ToString();
-            
+            dtpNgaySinh.Value = vm.NgaySinh.Value;
+          
             if (vm.GioiTinh == true)
             {
                 rbnNu.Checked = false;
@@ -68,12 +72,28 @@ namespace FinalProject_QuanLySinhVien
 
         private void dvgSinhVien_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            // Open Edit form here.
+            StudentForm form = new StudentForm();
+            form.Open(getSelectedStudentViewModelFromGrid());
+            
+            form.createStudent = new StudentForm.CreateStudent(CreateStudent);
+            form.updateStudent = new StudentForm.UpdateStudent(UpdateStudent);
         }
 
         private void dvgSinhVien_MouseClick(object sender, MouseEventArgs e)
         {
             bindStudentViewModelToForm(getSelectedStudentViewModelFromGrid());
+        }
+
+        public void UpdateStudent(SV sv)
+        {
+            svBLL.update(sv);
+            LoadALLStudentToDataGrid();
+        }
+
+        public void CreateStudent(SV sv)
+        {
+            svBLL.create(sv);
+            LoadALLStudentToDataGrid();
         }
     }
 }
