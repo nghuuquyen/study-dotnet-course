@@ -142,9 +142,9 @@
             // 
             this.cbxQueQuan.FormattingEnabled = true;
             this.cbxQueQuan.Items.AddRange(new object[] {
-            "Đà Nẵng",
-            "Hà Nội",
-            "Hồ Chí Minh"});
+            "Da Nang",
+            "Ha Noi",
+            "Ho Chi Minh"});
             this.cbxQueQuan.Location = new System.Drawing.Point(89, 114);
             this.cbxQueQuan.Name = "cbxQueQuan";
             this.cbxQueQuan.Size = new System.Drawing.Size(228, 21);
@@ -306,6 +306,7 @@
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnAdd
             // 
@@ -325,6 +326,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 

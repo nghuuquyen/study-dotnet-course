@@ -127,9 +127,9 @@
             // 
             this.cbxQueQuan.FormattingEnabled = true;
             this.cbxQueQuan.Items.AddRange(new object[] {
-            "Đà Nẵng",
-            "Hà Nội",
-            "Hồ Chí Minh"});
+            "Da Nang",
+            "Ha Noi",
+            "Ho Chinh Minh"});
             this.cbxQueQuan.Location = new System.Drawing.Point(89, 114);
             this.cbxQueQuan.Name = "cbxQueQuan";
             this.cbxQueQuan.Size = new System.Drawing.Size(228, 21);

@@ -239,5 +239,19 @@ namespace FinalProject_QuanLySinhVien
                 LoadALLStudentToDataGrid();
             }
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            bindStudentViewModelToForm(getSelectedStudentViewModelFromGrid());
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            StudentForm form = new StudentForm();
+            form.Open(getSelectedStudentViewModelFromGrid());
+
+            form.createStudent = new StudentForm.CreateStudent(CreateStudent);
+            form.updateStudent = new StudentForm.UpdateStudent(UpdateStudent);
+        }
     }
 }

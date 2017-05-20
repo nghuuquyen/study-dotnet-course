@@ -117,9 +117,9 @@ namespace FinalProject_QuanLySinhVien.GUI
         }
         public void Open(StudentViewModel vm)
         {
-            if(vm != null)
+            txtMSSV.Enabled = false;
+            if (vm != null)
             {
-                txtMSSV.Enabled = false;
                 bindStudentViewModelToForm(vm);
             } else
             {
