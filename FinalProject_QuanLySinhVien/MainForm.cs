@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinalProject_QuanLySinhVien.BLL;
+using FinalProject_QuanLySinhVien.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +17,24 @@ namespace FinalProject_QuanLySinhVien
         public MainForm()
         {
             InitializeComponent();
+            dvgSinhVien.AutoGenerateColumns = false;
+            LoadALLStudentToDataGrid();
         }
 
+        public void LoadALLStudentToDataGrid()
+        {
+            using (var db = new StudentDB())
+            {
+                SVBLL svBLL = new SVBLL();
+                dvgSinhVien.DataSource = svBLL.getDataGridViewModel();
+            }
+        }
+
+        public SV getSelectedStudentFromGrid()
+        {
+
+            return null;
+        }
         private void label4_Click(object sender, EventArgs e)
         {
 

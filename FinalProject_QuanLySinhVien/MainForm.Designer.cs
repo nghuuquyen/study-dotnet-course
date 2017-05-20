@@ -46,13 +46,7 @@
             this.rbnNu = new System.Windows.Forms.RadioButton();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbxKhoa = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DiemTB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TenKhoa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dvgSinhVien = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -61,8 +55,14 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSort = new System.Windows.Forms.Button();
             this.cbxSort = new System.Windows.Forms.ComboBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSinhVien)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -244,50 +244,20 @@
             this.cbxKhoa.Size = new System.Drawing.Size(228, 21);
             this.cbxKhoa.TabIndex = 8;
             // 
-            // dataGridView1
+            // dvgSinhVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MSSV,
             this.TenSV,
             this.GioiTinh,
             this.DiemTB,
             this.TenKhoa});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 207);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(740, 150);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MSSV
-            // 
-            this.MSSV.HeaderText = "MSSV";
-            this.MSSV.Name = "MSSV";
-            // 
-            // TenSV
-            // 
-            this.TenSV.HeaderText = "Họ và tên";
-            this.TenSV.Name = "TenSV";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "GioiTinh";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiemTB
-            // 
-            this.DiemTB.HeaderText = "Điểm TB Tích lũy";
-            this.DiemTB.Name = "DiemTB";
-            // 
-            // TenKhoa
-            // 
-            this.TenKhoa.HeaderText = "Khoa";
-            this.TenKhoa.Name = "TenKhoa";
+            this.dvgSinhVien.Location = new System.Drawing.Point(21, 207);
+            this.dvgSinhVien.Name = "dvgSinhVien";
+            this.dvgSinhVien.Size = new System.Drawing.Size(740, 150);
+            this.dvgSinhVien.TabIndex = 1;
             // 
             // btnShow
             // 
@@ -358,6 +328,46 @@
             this.cbxSort.Size = new System.Drawing.Size(167, 21);
             this.cbxSort.TabIndex = 5;
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MSSV
+            // 
+            this.MSSV.DataPropertyName = "MSSV";
+            this.MSSV.HeaderText = "MSSV";
+            this.MSSV.Name = "MSSV";
+            // 
+            // TenSV
+            // 
+            this.TenSV.DataPropertyName = "TenSV";
+            this.TenSV.HeaderText = "Họ và tên";
+            this.TenSV.Name = "TenSV";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "GioiTinh";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiemTB
+            // 
+            this.DiemTB.DataPropertyName = "DiemTB";
+            this.DiemTB.HeaderText = "Điểm TB Tích lũy";
+            this.DiemTB.Name = "DiemTB";
+            this.DiemTB.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiemTB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TenKhoa
+            // 
+            this.TenKhoa.DataPropertyName = "TenKhoa";
+            this.TenKhoa.HeaderText = "Khoa";
+            this.TenKhoa.Name = "TenKhoa";
+            this.TenKhoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TenKhoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,13 +381,13 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgSinhVien);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSinhVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,13 +413,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.ComboBox cbxKhoa;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MSSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn DiemTB;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TenKhoa;
+        private System.Windows.Forms.DataGridView dvgSinhVien;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
@@ -418,6 +422,12 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSort;
         private System.Windows.Forms.ComboBox cbxSort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MSSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoa;
     }
 }
 
