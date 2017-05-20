@@ -25,7 +25,7 @@ namespace FinalProject_QuanLySinhVien.DAL
         public List<StudentViewModel> getDataGridViewModel()
         {
             var db = new StudentDB();
-            return db.SVs.Select(s => new StudentViewModel
+            var result = db.SVs.Select(s => new StudentViewModel
             {
                 MSSV = s.MSSV,
                 TenSV = s.TenSV,
@@ -34,6 +34,15 @@ namespace FinalProject_QuanLySinhVien.DAL
                 DiemTB = s.DiemTB,
                 TenKhoa = s.Khoa.Ten
             }).ToList();
+
+            int i = 1;
+            foreach(var item in result)
+            {
+                item.STT = i;
+                i++;
+            }
+
+            return result;
         }
 
         public SV findByID(int id)

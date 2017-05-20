@@ -8,6 +8,7 @@ namespace FinalProject_QuanLySinhVien.ViewModels
 {
     public class StudentViewModel
     {
+        public int STT { get; set; }
         public int MSSV { get; set; }
 
         public string TenSV { get; set; }
