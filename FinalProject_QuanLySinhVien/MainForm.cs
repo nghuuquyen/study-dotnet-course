@@ -18,6 +18,26 @@ namespace FinalProject_QuanLySinhVien
     {
         KhoaBLL khoaBLL = new KhoaBLL();
         SVBLL svBLL = new SVBLL();
+
+        public delegate bool ComparerObj(object o1, object o2);
+
+
+        void Sort(object[] list, ComparerObj cmp)
+        {
+            for (int i = 0; i < list.Length - 1; i++)
+            {
+                for (int j = i + 1; j < list.Length; j++)
+                {
+                    if (cmp(list[i], list[j]))
+                    {
+                        object temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -144,6 +164,60 @@ namespace FinalProject_QuanLySinhVien
         private void btnReset_Click(object sender, EventArgs e)
         {
             LoadALLStudentToDataGrid();
+        }
+
+        private void ShowSortResult(SV[] datas)
+        {
+            
+            List<StudentViewModel> results = new List<StudentViewModel>();
+            foreach (var sv in datas)
+            {
+                results.Add(svBLL.coverSVToStudentViewModel(sv));
+            }
+
+            dvgSinhVien.DataSource = results;
+            dvgSinhVien.Refresh();
+            dvgSinhVien.Update();
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            // Index 0 : Sort by MSSV.
+            // Index 1 : Sort by student name.
+            // Index 2 : Sort by Khoa name.
+            // Index 3 : Sort by Diem TB.
+
+            if(cbxSort.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please , choose sort method.");
+                return;
+            }
+
+            SV[] results = svBLL.getAll().ToArray();
+
+            switch (cbxSort.SelectedIndex)
+            {
+                case 0:
+                    ComparerObj cmp_1 = new ComparerObj(SVBLL.CompareMSSV);
+                    this.Sort(results, cmp_1);
+                    ShowSortResult(results);
+                    break;
+                case 1:
+                    ComparerObj cmp_2 = new ComparerObj(SVBLL.CompareStudentName);
+                    this.Sort(results, cmp_2);
+                    ShowSortResult(results);
+                    break;
+                case 2:
+                    ComparerObj cmp_3 = new ComparerObj(SVBLL.CompareKhoaName);
+                    this.Sort(results, cmp_3);
+                    ShowSortResult(results);
+                    break;
+                case 3:
+                    ComparerObj cmp_4 = new ComparerObj(SVBLL.CompareDiemTB);
+                    this.Sort(results, cmp_4);
+                    ShowSortResult(results);
+                    break;
+            }
         }
     }
 }

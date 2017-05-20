@@ -360,10 +360,16 @@
             this.btnSort.TabIndex = 4;
             this.btnSort.Text = "Sort";
             this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // cbxSort
             // 
             this.cbxSort.FormattingEnabled = true;
+            this.cbxSort.Items.AddRange(new object[] {
+            "MSSV",
+            "Họ và tên",
+            "Tên Khoa",
+            "Điểm TB tích lũy"});
             this.cbxSort.Location = new System.Drawing.Point(110, 435);
             this.cbxSort.Name = "cbxSort";
             this.cbxSort.Size = new System.Drawing.Size(167, 21);

@@ -15,5 +15,13 @@ namespace FinalProject_QuanLySinhVien.DAL
                 return db.Khoas.Select(k => k).ToList();
             }
         }
+
+        public Khoa findByID(int id)
+        {
+            using (var db = new StudentDB())
+            {
+                return db.Khoas.Find(id);
+            }
+        }
     }
 }

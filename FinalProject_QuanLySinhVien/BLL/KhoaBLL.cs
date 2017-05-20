@@ -15,5 +15,10 @@ namespace FinalProject_QuanLySinhVien.BLL
         {
             return khoaDAL.getAll();
         }
+
+        public Khoa findById(int id)
+        {
+            return khoaDAL.findByID(id);
+        }
     }
 }

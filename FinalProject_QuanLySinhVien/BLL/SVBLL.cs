@@ -10,6 +10,7 @@ namespace FinalProject_QuanLySinhVien.BLL
 {
     public class SVBLL
     {
+
         public List<SV> findByName(string name)
         {
             SVDAL svDAL = new SVDAL();
@@ -62,6 +63,7 @@ namespace FinalProject_QuanLySinhVien.BLL
         public SV coverStudentViewModelToSV(StudentViewModel model)
         {
             SV sv = new SV();
+            KhoaBLL khoaBLL = new KhoaBLL();
 
             sv.TenSV = model.TenSV;
             sv.GioiTinh = model.GioiTinh;
@@ -70,9 +72,11 @@ namespace FinalProject_QuanLySinhVien.BLL
             sv.NgaySinh = model.NgaySinh;
             sv.QueQuan = model.QueQuan;
             sv.MaKhoa = model.MaKhoa;
+            sv.Khoa = khoaBLL.findById(model.MaKhoa.GetValueOrDefault());
 
-            return null;
+            return sv;
         }
+
         public void update(SV sv)
         {
             SVDAL svDAL = new SVDAL();
@@ -101,6 +105,42 @@ namespace FinalProject_QuanLySinhVien.BLL
         {
             SVDAL svDAL = new SVDAL();
             return svDAL.getDataGridViewModel();
+        }
+
+        public static bool CompareMSSV(object o1, object o2)
+        {
+            if (((SV)o1).MSSV > ((SV)o2).MSSV)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool CompareStudentName(object o1, object o2)
+        {
+            if (String.Compare(((SV)o1).TenSV, ((SV)o2).TenSV) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool CompareDiemTB(object o1, object o2)
+        {
+            if (((SV)o1).DiemTB > ((SV)o2).DiemTB)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool CompareKhoaName(object o1, object o2)
+        {
+            if (String.Compare(((SV)o1).Khoa.Ten, ((SV)o2).Khoa.Ten) > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
