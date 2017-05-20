@@ -1,4 +1,5 @@
-﻿using FinalProject_QuanLySinhVien.ViewModels;
+﻿using FinalProject_QuanLySinhVien.BLL;
+using FinalProject_QuanLySinhVien.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace FinalProject_QuanLySinhVien.GUI
 {
     public partial class StudentForm : Form
     {
+        KhoaBLL khoaBLL = new KhoaBLL();
         bool IsCreateNew = false;
 
         public delegate void CreateStudent(SV sv);
@@ -24,7 +26,16 @@ namespace FinalProject_QuanLySinhVien.GUI
         public StudentForm()
         {
             InitializeComponent();
+            loadListKhoaToComboBox();
         }
+
+        public void loadListKhoaToComboBox()
+        {
+            cbxKhoa.ValueMember = "MaKhoa";
+            cbxKhoa.DisplayMember = "Ten";
+            cbxKhoa.DataSource = khoaBLL.getAll();
+        }
+
         public void bindStudentViewModelToForm(StudentViewModel vm)
         {
             txtMSSV.Text = vm.MSSV.ToString();
@@ -32,6 +43,10 @@ namespace FinalProject_QuanLySinhVien.GUI
             txtHoKhau.Text = vm.HoKhau;
             txtDiemTB.Text = vm.DiemTB.ToString();
             dtpNgaySinh.Value = vm.NgaySinh.Value;
+            if(vm.MaKhoa != null)
+                cbxKhoa.SelectedValue = vm.MaKhoa;
+
+            cbxQueQuan.SelectedValue = vm.QueQuan;
 
             if (vm.GioiTinh == true)
             {
@@ -49,10 +64,12 @@ namespace FinalProject_QuanLySinhVien.GUI
         {
             SV sv = new SV();
 
+            int MaKhoa;
             int SVID;
             double diemTB;
 
             bool validID = Int32.TryParse(txtMSSV.Text, out SVID);
+            bool validMaKhoa = Int32.TryParse(cbxKhoa.SelectedValue.ToString(), out MaKhoa);
             bool validDiemTB = Double.TryParse(txtDiemTB.Text, out diemTB);
 
             if (!validID && IsCreateNew == false)
@@ -67,6 +84,12 @@ namespace FinalProject_QuanLySinhVien.GUI
                 return null;
             }
 
+            if(!validMaKhoa || cbxKhoa.SelectedValue == null)
+            {
+                MessageBox.Show("Khoa not valid or empty.");
+                return null;
+            }
+
             if(IsCreateNew == false)
             {
                 sv.MSSV = SVID;
@@ -78,6 +101,7 @@ namespace FinalProject_QuanLySinhVien.GUI
             sv.NgaySinh = dtpNgaySinh.Value;
             sv.HoKhau = txtHoKhau.Text;
             sv.DiemTB = diemTB;
+            sv.MaKhoa = MaKhoa;
 
             if (rbnNam.Checked)
             {
@@ -89,7 +113,6 @@ namespace FinalProject_QuanLySinhVien.GUI
                 sv.GioiTinh = false;
             }
 
-            //TODO: Add khoa selected item.
             return sv;
         }
         public void Open(StudentViewModel vm)

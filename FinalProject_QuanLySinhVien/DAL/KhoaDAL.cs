@@ -8,5 +8,12 @@ namespace FinalProject_QuanLySinhVien.DAL
 {
     class KhoaDAL
     {
+        public List<Khoa> getAll()
+        {
+            using ( var db = new StudentDB())
+            {
+                return db.Khoas.Select(k => k).ToList();
+            }
+        }
     }
 }

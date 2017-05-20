@@ -61,6 +61,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSort = new System.Windows.Forms.Button();
             this.cbxSort = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSinhVien)).BeginInit();
             this.SuspendLayout();
@@ -327,7 +328,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(292, 380);
+            this.btnDelete.Location = new System.Drawing.Point(291, 380);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -342,6 +343,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -367,11 +369,22 @@
             this.cbxSort.Size = new System.Drawing.Size(167, 21);
             this.cbxSort.TabIndex = 5;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(291, 435);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 479);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cbxSort);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.txtSearch);
@@ -384,6 +397,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
             this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSinhVien)).EndInit();
@@ -427,6 +441,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoa;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

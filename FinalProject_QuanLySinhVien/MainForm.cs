@@ -16,12 +16,21 @@ namespace FinalProject_QuanLySinhVien
 {
     public partial class MainForm : Form
     {
+        KhoaBLL khoaBLL = new KhoaBLL();
         SVBLL svBLL = new SVBLL();
         public MainForm()
         {
             InitializeComponent();
             dvgSinhVien.AutoGenerateColumns = false;
             LoadALLStudentToDataGrid();
+            loadListKhoaToComboBox();
+        }
+
+        public void loadListKhoaToComboBox()
+        {
+            cbxKhoa.ValueMember = "MaKhoa";
+            cbxKhoa.DisplayMember = "Ten";
+            cbxKhoa.DataSource = khoaBLL.getAll();
         }
 
         public void LoadALLStudentToDataGrid()
@@ -57,7 +66,12 @@ namespace FinalProject_QuanLySinhVien
             txtHoKhau.Text = vm.HoKhau;
             txtDiemTB.Text = vm.DiemTB.ToString();
             dtpNgaySinh.Value = vm.NgaySinh.Value;
-          
+
+            cbxQueQuan.SelectedValue = vm.QueQuan;
+
+            if (vm.MaKhoa != null)
+                cbxKhoa.SelectedValue = vm.MaKhoa;
+
             if (vm.GioiTinh == true)
             {
                 rbnNu.Checked = false;
@@ -103,6 +117,33 @@ namespace FinalProject_QuanLySinhVien
 
             form.createStudent = new StudentForm.CreateStudent(CreateStudent);
             form.updateStudent = new StudentForm.UpdateStudent(UpdateStudent);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text != null)
+            {
+                List<SV> searchResules = svBLL.findByName(txtSearch.Text);
+                List<StudentViewModel> results = new List<StudentViewModel>();
+                foreach(var sv in searchResules)
+                {
+                    results.Add(svBLL.coverSVToStudentViewModel(sv));
+                }
+
+                dvgSinhVien.DataSource = results;
+                dvgSinhVien.Refresh();
+                dvgSinhVien.Update();
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            LoadALLStudentToDataGrid();
         }
     }
 }

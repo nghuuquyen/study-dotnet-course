@@ -10,6 +10,12 @@ namespace FinalProject_QuanLySinhVien.BLL
 {
     public class SVBLL
     {
+        public List<SV> findByName(string name)
+        {
+            SVDAL svDAL = new SVDAL();
+            return svDAL.findByName(name);
+        }
+
         public void create(SV sv)
         {
             SVDAL svDAL = new SVDAL();
@@ -31,6 +37,25 @@ namespace FinalProject_QuanLySinhVien.BLL
             model.NgaySinh = sv.NgaySinh;
             model.QueQuan = sv.QueQuan;
             model.DiemTB = sv.DiemTB;
+            model.MaKhoa = sv.MaKhoa;
+            return model;
+        }
+
+        public StudentViewModel coverSVToStudentViewModel(SV sv)
+        {
+            SVDAL svDAL = new SVDAL();
+            StudentViewModel model = new StudentViewModel();
+
+            if (sv == null) return null;
+
+            model.TenSV = sv.TenSV;
+            model.GioiTinh = sv.GioiTinh;
+            model.HoKhau = sv.HoKhau;
+            model.MSSV = sv.MSSV;
+            model.NgaySinh = sv.NgaySinh;
+            model.QueQuan = sv.QueQuan;
+            model.DiemTB = sv.DiemTB;
+            model.MaKhoa = sv.MaKhoa;
             return model;
         }
 

@@ -9,6 +9,12 @@ namespace FinalProject_QuanLySinhVien.DAL
 {
     public class SVDAL
     {
+        public List<SV> findByName(string name)
+        {
+            var db = new StudentDB();
+            return db.SVs.Where(s => s.TenSV.Contains(name)).Select(s => s).ToList();
+        }
+
         public List<SV> getALL()
         {
             var db = new StudentDB();

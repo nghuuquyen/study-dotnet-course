@@ -24,6 +24,6 @@ namespace FinalProject_QuanLySinhVien.ViewModels
         
         public string TenKhoa { get; set; }
 
-        public int MaKhoa { get; set; }
+        public int? MaKhoa { get; set; }
     }
 }
