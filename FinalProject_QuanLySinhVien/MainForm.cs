@@ -95,5 +95,14 @@ namespace FinalProject_QuanLySinhVien
             svBLL.create(sv);
             LoadALLStudentToDataGrid();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            StudentForm form = new StudentForm();
+            form.Open(null);
+
+            form.createStudent = new StudentForm.CreateStudent(CreateStudent);
+            form.updateStudent = new StudentForm.UpdateStudent(UpdateStudent);
+        }
     }
 }

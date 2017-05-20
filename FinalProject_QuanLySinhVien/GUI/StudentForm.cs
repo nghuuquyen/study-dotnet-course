@@ -55,7 +55,7 @@ namespace FinalProject_QuanLySinhVien.GUI
             bool validID = Int32.TryParse(txtMSSV.Text, out SVID);
             bool validDiemTB = Double.TryParse(txtDiemTB.Text, out diemTB);
 
-            if (!validID)
+            if (!validID && IsCreateNew == false)
             {
                 MessageBox.Show("Not Valid MSSV.");
                 return null;
@@ -67,7 +67,11 @@ namespace FinalProject_QuanLySinhVien.GUI
                 return null;
             }
 
-            sv.MSSV = SVID;
+            if(IsCreateNew == false)
+            {
+                sv.MSSV = SVID;
+            }
+
             sv.TenSV = txtHoTen.Text;
             sv.QueQuan = cbxQueQuan.SelectedItem != null ? cbxQueQuan.SelectedItem.ToString() : "";
            
@@ -118,6 +122,7 @@ namespace FinalProject_QuanLySinhVien.GUI
                 {
                     MessageBox.Show("Create new student.");
                     createStudent.Invoke(sv);
+                    this.Close();
                 }
             } else
             {
@@ -125,6 +130,7 @@ namespace FinalProject_QuanLySinhVien.GUI
                 {
                     MessageBox.Show("Update exits student.");
                     updateStudent.Invoke(sv);
+                    this.Close();
                 }
             }
         }
