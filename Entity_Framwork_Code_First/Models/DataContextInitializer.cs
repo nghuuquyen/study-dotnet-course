@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity_Framwork_Code_First.Models
 {
-    class DataContextInitializer: DropCreateDatabaseAlways<Model1>
+    class DataContextInitializer: CreateDatabaseIfNotExists<Model1>
     {
         protected override void Seed(Model1 context)
         {

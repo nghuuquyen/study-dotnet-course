@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_Framwork_Code_First"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple_EF_Code_First", "Simple_EF_Code_First\Simple_EF_Code_First.csproj", "{12E455CD-C7C4-4496-8918-2D33B3F5CA3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple_Code_First", "Simple_Code_First\Simple_Code_First.csproj", "{A3955A95-3305-4080-9C0B-32F89DF5AA73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalProject_QuanLySinhVien", "FinalProject_QuanLySinhVien\FinalProject_QuanLySinhVien.csproj", "{9EA439B3-B7F8-4B39-82A3-5C7CC5DCBF7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{12E455CD-C7C4-4496-8918-2D33B3F5CA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E455CD-C7C4-4496-8918-2D33B3F5CA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E455CD-C7C4-4496-8918-2D33B3F5CA3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3955A95-3305-4080-9C0B-32F89DF5AA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3955A95-3305-4080-9C0B-32F89DF5AA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3955A95-3305-4080-9C0B-32F89DF5AA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3955A95-3305-4080-9C0B-32F89DF5AA73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA439B3-B7F8-4B39-82A3-5C7CC5DCBF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA439B3-B7F8-4B39-82A3-5C7CC5DCBF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA439B3-B7F8-4B39-82A3-5C7CC5DCBF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA439B3-B7F8-4B39-82A3-5C7CC5DCBF7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
