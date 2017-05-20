@@ -108,11 +108,11 @@ namespace FinalProject_QuanLySinhVien.GUI
                 sv.MSSV = SVID;
             }
 
-            sv.TenSV = txtHoTen.Text;
+            sv.TenSV = txtHoTen.Text.ToString();
             sv.QueQuan = cbxQueQuan.SelectedItem != null ? cbxQueQuan.SelectedItem.ToString() : "";
            
             sv.NgaySinh = dtpNgaySinh.Value;
-            sv.HoKhau = txtHoKhau.Text;
+            sv.HoKhau = txtHoKhau.Text.ToString();
             sv.DiemTB = diemTB;
             sv.MaKhoa = MaKhoa;
 

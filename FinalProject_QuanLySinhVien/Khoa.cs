@@ -22,7 +22,6 @@ namespace FinalProject_QuanLySinhVien
         [StringLength(255)]
         public string Ten { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SV> SVs { get; set; }
     }
 }

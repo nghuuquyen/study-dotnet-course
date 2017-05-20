@@ -83,8 +83,8 @@ namespace FinalProject_QuanLySinhVien
         public void bindStudentViewModelToForm(StudentViewModel vm)
         {
             txtMSSV.Text = vm.MSSV.ToString();
-            txtHoTen.Text = vm.TenSV;
-            txtHoKhau.Text = vm.HoKhau;
+            txtHoTen.Text = vm.TenSV.ToString();
+            txtHoKhau.Text = vm.HoKhau.ToString();
             txtDiemTB.Text = vm.DiemTB.ToString();
             dtpNgaySinh.Value = vm.NgaySinh.Value;
 
