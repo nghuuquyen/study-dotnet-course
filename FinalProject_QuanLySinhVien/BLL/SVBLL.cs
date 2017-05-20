@@ -16,6 +16,38 @@ namespace FinalProject_QuanLySinhVien.BLL
             svDAL.create(sv);
         }
 
+        public StudentViewModel getStudentViewModelByID(int id)
+        {
+            SVDAL svDAL = new SVDAL();
+            StudentViewModel model = new StudentViewModel();
+            SV sv = svDAL.findByID(id);
+
+            if (sv == null) return null;
+
+            model.TenSV = sv.TenSV;
+            model.GioiTinh = sv.GioiTinh;
+            model.HoKhau = sv.HoKhau;
+            model.MSSV = sv.MSSV;
+            model.NgaySinh = sv.NgaySinh;
+            model.QueQuan = sv.QueQuan;
+            model.DiemTB = sv.DiemTB;
+            return model;
+        }
+
+        public SV coverStudentViewModelToSV(StudentViewModel model)
+        {
+            SV sv = new SV();
+
+            sv.TenSV = model.TenSV;
+            sv.GioiTinh = model.GioiTinh;
+            sv.HoKhau = model.HoKhau;
+            sv.MSSV = model.MSSV;
+            sv.NgaySinh = model.NgaySinh;
+            sv.QueQuan = model.QueQuan;
+            sv.MaKhoa = model.MaKhoa;
+
+            return null;
+        }
         public void update(SV sv)
         {
             SVDAL svDAL = new SVDAL();

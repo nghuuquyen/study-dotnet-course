@@ -1,5 +1,6 @@
 ﻿using FinalProject_QuanLySinhVien.BLL;
 using FinalProject_QuanLySinhVien.DAL;
+using FinalProject_QuanLySinhVien.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace FinalProject_QuanLySinhVien
 {
     public partial class MainForm : Form
     {
+        SVBLL svBLL = new SVBLL();
         public MainForm()
         {
             InitializeComponent();
@@ -25,24 +27,53 @@ namespace FinalProject_QuanLySinhVien
         {
             using (var db = new StudentDB())
             {
-                SVBLL svBLL = new SVBLL();
                 dvgSinhVien.DataSource = svBLL.getDataGridViewModel();
             }
         }
 
-        public SV getSelectedStudentFromGrid()
+        public StudentViewModel getSelectedStudentViewModelFromGrid()
         {
+            if (dvgSinhVien.SelectedCells.Count > 0)
+            {
+                int rowIndex = dvgSinhVien.SelectedCells[0].RowIndex;
+                int SVID;
+                bool validID = Int32.TryParse(dvgSinhVien.Rows[rowIndex].Cells["MSSV"].Value.ToString(), out SVID);
 
+                if (validID)
+                {
+                    return svBLL.getStudentViewModelByID(SVID);
+                }
+            }
             return null;
         }
-        private void label4_Click(object sender, EventArgs e)
-        {
 
+        public void bindStudentViewModelToForm(StudentViewModel vm)
+        {
+            txtMSSV.Text = vm.MSSV.ToString();
+            txtHoTen.Text = vm.TenSV;
+            txtHoKhau.Text = vm.HoKhau;
+            txtDiemTB.Text = vm.DiemTB.ToString();
+            
+            if (vm.GioiTinh == true)
+            {
+                rbnNu.Checked = false;
+                rbnNam.Checked = true;    
+            }
+            else if (vm.GioiTinh == false)
+            {
+                rbnNam.Checked = false;
+                rbnNu.Checked = true;
+            }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void dvgSinhVien_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            // Open Edit form here.
+        }
 
+        private void dvgSinhVien_MouseClick(object sender, MouseEventArgs e)
+        {
+            bindStudentViewModelToForm(getSelectedStudentViewModelFromGrid());
         }
     }
 }

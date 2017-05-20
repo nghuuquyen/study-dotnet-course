@@ -23,5 +23,7 @@ namespace FinalProject_QuanLySinhVien.ViewModels
         public double? DiemTB { get; set; }
         
         public string TenKhoa { get; set; }
+
+        public int MaKhoa { get; set; }
     }
 }

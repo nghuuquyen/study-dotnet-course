@@ -29,24 +29,30 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMSSV = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtHoKhau = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDiemTB = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbxQueQuan = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.rbnNam = new System.Windows.Forms.RadioButton();
-            this.rbnNu = new System.Windows.Forms.RadioButton();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbxKhoa = new System.Windows.Forms.ComboBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.rbnNu = new System.Windows.Forms.RadioButton();
+            this.rbnNam = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxQueQuan = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDiemTB = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtHoKhau = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMSSV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dvgSinhVien = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -55,12 +61,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSort = new System.Windows.Forms.Button();
             this.cbxSort = new System.Windows.Forms.ComboBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSinhVien)).BeginInit();
             this.SuspendLayout();
@@ -91,100 +91,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // label1
+            // cbxKhoa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MSSV";
+            this.cbxKhoa.FormattingEnabled = true;
+            this.cbxKhoa.Location = new System.Drawing.Point(452, 90);
+            this.cbxKhoa.Name = "cbxKhoa";
+            this.cbxKhoa.Size = new System.Drawing.Size(228, 21);
+            this.cbxKhoa.TabIndex = 8;
             // 
-            // txtMSSV
+            // dtpNgaySinh
             // 
-            this.txtMSSV.Location = new System.Drawing.Point(89, 33);
-            this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(228, 20);
-            this.txtMSSV.TabIndex = 1;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(89, 86);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(228, 20);
+            this.dtpNgaySinh.TabIndex = 7;
             // 
-            // label2
+            // rbnNu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Họ và tên";
+            this.rbnNu.AutoSize = true;
+            this.rbnNu.Location = new System.Drawing.Point(557, 117);
+            this.rbnNu.Name = "rbnNu";
+            this.rbnNu.Size = new System.Drawing.Size(39, 17);
+            this.rbnNu.TabIndex = 6;
+            this.rbnNu.TabStop = true;
+            this.rbnNu.Text = "Nữ";
+            this.rbnNu.UseVisualStyleBackColor = true;
             // 
-            // txtHoTen
+            // rbnNam
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(89, 59);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(228, 20);
-            this.txtHoTen.TabIndex = 1;
+            this.rbnNam.AutoSize = true;
+            this.rbnNam.Location = new System.Drawing.Point(452, 115);
+            this.rbnNam.Name = "rbnNam";
+            this.rbnNam.Size = new System.Drawing.Size(47, 17);
+            this.rbnNam.TabIndex = 5;
+            this.rbnNam.TabStop = true;
+            this.rbnNam.Text = "Nam";
+            this.rbnNam.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Ngày sinh";
-            // 
-            // txtHoKhau
-            // 
-            this.txtHoKhau.Location = new System.Drawing.Point(452, 33);
-            this.txtHoKhau.Name = "txtHoKhau";
-            this.txtHoKhau.Size = new System.Drawing.Size(228, 20);
-            this.txtHoKhau.TabIndex = 1;
-            this.txtHoKhau.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(347, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Hộ khẩu thường trú";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // txtDiemTB
-            // 
-            this.txtDiemTB.Location = new System.Drawing.Point(452, 63);
-            this.txtDiemTB.Name = "txtDiemTB";
-            this.txtDiemTB.Size = new System.Drawing.Size(228, 20);
-            this.txtDiemTB.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(347, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Điểm TB tích lũy";
-            this.label5.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(347, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Khoa";
-            this.label6.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Quê quán";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(347, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Giới tính";
             // 
             // cbxQueQuan
             // 
@@ -198,51 +149,96 @@
             this.cbxQueQuan.Size = new System.Drawing.Size(228, 21);
             this.cbxQueQuan.TabIndex = 3;
             // 
-            // label8
+            // label7
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(347, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Giới tính";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Quê quán";
             // 
-            // rbnNam
+            // label6
             // 
-            this.rbnNam.AutoSize = true;
-            this.rbnNam.Location = new System.Drawing.Point(452, 115);
-            this.rbnNam.Name = "rbnNam";
-            this.rbnNam.Size = new System.Drawing.Size(47, 17);
-            this.rbnNam.TabIndex = 5;
-            this.rbnNam.TabStop = true;
-            this.rbnNam.Text = "Nam";
-            this.rbnNam.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(347, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Khoa";
             // 
-            // rbnNu
+            // label5
             // 
-            this.rbnNu.AutoSize = true;
-            this.rbnNu.Location = new System.Drawing.Point(557, 117);
-            this.rbnNu.Name = "rbnNu";
-            this.rbnNu.Size = new System.Drawing.Size(39, 17);
-            this.rbnNu.TabIndex = 6;
-            this.rbnNu.TabStop = true;
-            this.rbnNu.Text = "Nữ";
-            this.rbnNu.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(347, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Điểm TB tích lũy";
             // 
-            // dtpNgaySinh
+            // label4
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(89, 86);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(228, 20);
-            this.dtpNgaySinh.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(347, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Hộ khẩu thường trú";
             // 
-            // cbxKhoa
+            // label3
             // 
-            this.cbxKhoa.FormattingEnabled = true;
-            this.cbxKhoa.Location = new System.Drawing.Point(452, 90);
-            this.cbxKhoa.Name = "cbxKhoa";
-            this.cbxKhoa.Size = new System.Drawing.Size(228, 21);
-            this.cbxKhoa.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Ngày sinh";
+            // 
+            // txtDiemTB
+            // 
+            this.txtDiemTB.Location = new System.Drawing.Point(452, 63);
+            this.txtDiemTB.Name = "txtDiemTB";
+            this.txtDiemTB.Size = new System.Drawing.Size(228, 20);
+            this.txtDiemTB.TabIndex = 1;
+            // 
+            // txtHoTen
+            // 
+            this.txtHoTen.Location = new System.Drawing.Point(89, 59);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(228, 20);
+            this.txtHoTen.TabIndex = 1;
+            // 
+            // txtHoKhau
+            // 
+            this.txtHoKhau.Location = new System.Drawing.Point(452, 33);
+            this.txtHoKhau.Name = "txtHoKhau";
+            this.txtHoKhau.Size = new System.Drawing.Size(228, 20);
+            this.txtHoKhau.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Họ và tên";
+            // 
+            // txtMSSV
+            // 
+            this.txtMSSV.Location = new System.Drawing.Point(89, 33);
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(228, 20);
+            this.txtMSSV.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MSSV";
             // 
             // dvgSinhVien
             // 
@@ -258,6 +254,48 @@
             this.dvgSinhVien.Name = "dvgSinhVien";
             this.dvgSinhVien.Size = new System.Drawing.Size(740, 150);
             this.dvgSinhVien.TabIndex = 1;
+            this.dvgSinhVien.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvgSinhVien_MouseClick);
+            this.dvgSinhVien.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dvgSinhVien_MouseDoubleClick);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MSSV
+            // 
+            this.MSSV.DataPropertyName = "MSSV";
+            this.MSSV.HeaderText = "MSSV";
+            this.MSSV.Name = "MSSV";
+            // 
+            // TenSV
+            // 
+            this.TenSV.DataPropertyName = "TenSV";
+            this.TenSV.HeaderText = "Họ và tên";
+            this.TenSV.Name = "TenSV";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "GioiTinh";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiemTB
+            // 
+            this.DiemTB.DataPropertyName = "DiemTB";
+            this.DiemTB.HeaderText = "Điểm TB Tích lũy";
+            this.DiemTB.Name = "DiemTB";
+            this.DiemTB.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiemTB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TenKhoa
+            // 
+            this.TenKhoa.DataPropertyName = "TenKhoa";
+            this.TenKhoa.HeaderText = "Khoa";
+            this.TenKhoa.Name = "TenKhoa";
+            this.TenKhoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TenKhoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnShow
             // 
@@ -327,46 +365,6 @@
             this.cbxSort.Name = "cbxSort";
             this.cbxSort.Size = new System.Drawing.Size(167, 21);
             this.cbxSort.TabIndex = 5;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MSSV
-            // 
-            this.MSSV.DataPropertyName = "MSSV";
-            this.MSSV.HeaderText = "MSSV";
-            this.MSSV.Name = "MSSV";
-            // 
-            // TenSV
-            // 
-            this.TenSV.DataPropertyName = "TenSV";
-            this.TenSV.HeaderText = "Họ và tên";
-            this.TenSV.Name = "TenSV";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "GioiTinh";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiemTB
-            // 
-            this.DiemTB.DataPropertyName = "DiemTB";
-            this.DiemTB.HeaderText = "Điểm TB Tích lũy";
-            this.DiemTB.Name = "DiemTB";
-            this.DiemTB.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiemTB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TenKhoa
-            // 
-            this.TenKhoa.DataPropertyName = "TenKhoa";
-            this.TenKhoa.HeaderText = "Khoa";
-            this.TenKhoa.Name = "TenKhoa";
-            this.TenKhoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TenKhoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MainForm
             // 
